@@ -8,7 +8,6 @@ import {
   useBlockProps,
 } from "@wordpress/block-editor";
 import { Button, PanelBody, SelectControl } from "@wordpress/components";
-import "./editor.css";
 
 export default function Edit({ attributes, setAttributes }) {
   const {

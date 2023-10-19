@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "humi-blocks/toc",
+  "version": "0.1.0",
+  "title": "Humi 目次",
+  "category": "widgets",
+  "icon": "list-view",
+  "description": "",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "keywords": [
+    "目次",
+    "toc",
+    "table of contents"
+  ],
+  "textdomain": "humi-blocks",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

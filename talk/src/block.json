@@ -3,18 +3,17 @@
   "apiVersion": 3,
   "name": "humi-block/talk",
   "version": "0.1.0",
-  "title": "Humi 会話",
+  "title": "Humi シェアボタン",
   "category": "humi-blocks",
-  "icon": "admin-comments",
-  "description": "アイコン付きの会話を表現できます。",
+  "icon": "share",
+  "description": "SNSへのシェアボタン",
   "example": {},
   "supports": {
     "html": false
   },
-  "keywords": ["トーク", "会話", "吹き出し", "speak", "person"],
+  "keywords": ["share", "sns", "button"],
   "textdomain": "humi-blocks",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
-  "style": "file:./style-index.css",
-  "viewScript": "file:./view.js"
+  "style": "file:./style-index.css"
 }

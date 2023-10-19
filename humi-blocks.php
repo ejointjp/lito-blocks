@@ -18,17 +18,26 @@
  * @package: humi-blocks
  */
 
-function humi_register_blocks()
-{
-  // ここにブロックタイプを追加
-  $block_types = ['alert', 'gist', 'limited-time', 'marker-text', 'share-btn', 'talk'];
+// function humi_register_blocks()
+// {
+//   // ここにブロックタイプを追加
+//   $block_types = ['alert', 'gist', 'limited-time', 'marker-text', 'talk'];
 
-  foreach ($block_types as $block_type) {
-    register_block_type(__DIR__ . '/' . $block_type . '/build');
-  }
-}
+//   foreach ($block_types as $block_type) {
+//     register_block_type(__DIR__ . '/' . $block_type . '/build');
+//   }
+// }
 
-add_action('init', 'humi_register_blocks');
+// add_action('init', 'humi_register_blocks');
+
+include plugin_dir_path(__FILE__) . './alert/alert.php';
+include plugin_dir_path(__FILE__) . './gist/gist.php';
+include plugin_dir_path(__FILE__) . './limited-time/limited-time.php';
+include plugin_dir_path(__FILE__) . './marker-text/marker-text.php';
+include plugin_dir_path(__FILE__) . './talk/talk.php';
+include plugin_dir_path(__FILE__) . './share-btn/share-btn.php';
+include plugin_dir_path(__FILE__) . './toc/toc.php';
+
 
 /**
  * Categories
@@ -73,33 +82,3 @@ function humi_blocks_enqueue_block_editor_assets()
 }
 
 add_action('enqueue_block_editor_assets', 'humi_blocks_enqueue_block_editor_assets');
-
-// DateTime設定に応じて非表示にする
-function humi_date_time($content, $block)
-{
-  // Dates entered in the block editor are localized.
-  $attributes      = $block['attrs'];
-  $start_date_time = isset($attributes['startDateTime']) ? $attributes['startDateTime'] : false;
-  $end_date_time   = isset($attributes['endDateTime']) ? $attributes['endDateTime'] : false;
-
-  if (!$start_date_time && !$end_date_time) {
-    return $content;
-  }
-
-  $current_date_time = wp_date('Y-m-d\TH:i:s');
-
-  if ($start_date_time) {
-    if ($start_date_time > $current_date_time) {
-      return '';
-    }
-  }
-
-  if ($end_date_time) {
-    if ($end_date_time < $current_date_time) {
-      return '';
-    }
-  }
-
-  return $content;
-}
-add_action('render_block', 'humi_date_time', 10, 2);
