@@ -21,7 +21,7 @@
 function humi_register_blocks()
 {
   // ここにブロックタイプを追加
-  $block_types = ['alert', 'limited-time', 'marker-text', 'talk'];
+  $block_types = ['alert', 'gist', 'limited-time', 'marker-text', 'share-btn', 'talk'];
 
   foreach ($block_types as $block_type) {
     register_block_type(__DIR__ . '/' . $block_type . '/build');

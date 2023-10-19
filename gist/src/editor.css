@@ -1,0 +1,26 @@
+.gist-label {
+  top: 0;
+  left: 1rem;
+  z-index: 1;
+  width: fit-content;
+
+  &::placeholder {
+    color: var(--su-zinc-100);
+  }
+}
+
+.gist-list {
+  /* & .wp-block {
+    margin-bottom: 1.5rem;
+  } */
+
+  & .wp-block + .wp-block {
+    margin-top: 0.5rem;
+  }
+
+  & .block-list-appender {
+    bottom: -2rem;
+    left: 0;
+    color: var(--su-zinc-600);
+  }
+}
