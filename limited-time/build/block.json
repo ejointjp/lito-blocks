@@ -6,7 +6,7 @@
   "title": "Humi 期間限定表示",
   "category": "humi-blocks",
   "icon": "clock",
-  "description": "Example block scaffolded with Create Block tool.",
+  "description": "内包ブロックの表示期間を指定できます　",
   "example": {},
   "supports": {
     "html": false

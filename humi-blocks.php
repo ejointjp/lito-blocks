@@ -14,14 +14,14 @@
  * Update URI:        
  * Text Domain:       humi-blocks
  * Domain Path:       /languages
+ * 
+ * @package: humi-blocks
  */
 
 function humi_register_blocks()
 {
-  // talkを登録
-  // register_block_type(__DIR__ . '/talk/build');
-
-  $block_types = ['alert', 'limited-time', 'talk']; // ここにブロックタイプを追加
+  // ここにブロックタイプを追加
+  $block_types = ['alert', 'limited-time', 'marker-text', 'talk'];
 
   foreach ($block_types as $block_type) {
     register_block_type(__DIR__ . '/' . $block_type . '/build');
@@ -29,8 +29,6 @@ function humi_register_blocks()
 }
 
 add_action('init', 'humi_register_blocks');
-
-
 
 /**
  * Categories
@@ -75,3 +73,33 @@ function humi_blocks_enqueue_block_editor_assets()
 }
 
 add_action('enqueue_block_editor_assets', 'humi_blocks_enqueue_block_editor_assets');
+
+// DateTime設定に応じて非表示にする
+function humi_date_time($content, $block)
+{
+  // Dates entered in the block editor are localized.
+  $attributes      = $block['attrs'];
+  $start_date_time = isset($attributes['startDateTime']) ? $attributes['startDateTime'] : false;
+  $end_date_time   = isset($attributes['endDateTime']) ? $attributes['endDateTime'] : false;
+
+  if (!$start_date_time && !$end_date_time) {
+    return $content;
+  }
+
+  $current_date_time = wp_date('Y-m-d\TH:i:s');
+
+  if ($start_date_time) {
+    if ($start_date_time > $current_date_time) {
+      return '';
+    }
+  }
+
+  if ($end_date_time) {
+    if ($end_date_time < $current_date_time) {
+      return '';
+    }
+  }
+
+  return $content;
+}
+add_action('render_block', 'humi_date_time', 10, 2);

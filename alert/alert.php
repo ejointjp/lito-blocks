@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name:       Alert
  * Description:       Example block scaffolded with Create Block tool.
@@ -8,9 +9,9 @@
  * Author:            The WordPress Contributors
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       alert
+ * Text Domain:       humi-blocks
  *
- * @package           create-block
+ * @package           humi-blocks
  */
 
 /**
@@ -20,7 +21,8 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function create_block_alert_block_init() {
-	register_block_type( __DIR__ . '/build' );
+function create_block_alert_block_init()
+{
+	register_block_type(__DIR__ . '/build');
 }
-add_action( 'init', 'create_block_alert_block_init' );
+add_action('init', 'create_block_alert_block_init');
