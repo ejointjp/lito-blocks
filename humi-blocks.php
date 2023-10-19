@@ -30,13 +30,13 @@
 
 // add_action('init', 'humi_register_blocks');
 
-include plugin_dir_path(__FILE__) . './alert/alert.php';
-include plugin_dir_path(__FILE__) . './gist/gist.php';
-include plugin_dir_path(__FILE__) . './limited-time/limited-time.php';
-include plugin_dir_path(__FILE__) . './marker-text/marker-text.php';
-include plugin_dir_path(__FILE__) . './talk/talk.php';
-include plugin_dir_path(__FILE__) . './share-btn/share-btn.php';
-include plugin_dir_path(__FILE__) . './toc/toc.php';
+include plugin_dir_path(__FILE__) . './blocks/alert/alert.php';
+include plugin_dir_path(__FILE__) . './blocks/gist/gist.php';
+include plugin_dir_path(__FILE__) . './blocks/limited-time/limited-time.php';
+include plugin_dir_path(__FILE__) . './blocks/marker-text/marker-text.php';
+include plugin_dir_path(__FILE__) . './blocks/talk/talk.php';
+include plugin_dir_path(__FILE__) . './blocks/share-btn/share-btn.php';
+include plugin_dir_path(__FILE__) . './blocks/toc/toc.php';
 
 
 /**
