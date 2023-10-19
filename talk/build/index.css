@@ -1,0 +1,19 @@
+/*!********************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/editor.css ***!
+  \********************************************************************************************************************************************************************/
+.talk-figure .image-button {
+	display: block;
+}
+
+.talk-name .block-editor-plain-text {
+	width: auto;
+	padding: 0.25rem;
+	border: 1px solid var(--su-border-extra-light);
+}
+
+.talk--reverse .talk-name .block-editor-plain-text {
+	text-align: right;
+}
+
+
+/*# sourceMappingURL=index.css.map*/

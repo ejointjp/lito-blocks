@@ -1,0 +1,13 @@
+.talk-figure .image-button {
+	display: block;
+}
+
+.talk-name .block-editor-plain-text {
+	width: auto;
+	padding: 0.25rem;
+	border: 1px solid var(--su-border-extra-light);
+}
+
+.talk--reverse .talk-name .block-editor-plain-text {
+	text-align: right;
+}

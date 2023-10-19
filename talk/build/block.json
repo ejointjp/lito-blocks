@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "humi-block/talk",
+  "version": "0.1.0",
+  "title": "Humi 会話",
+  "description": "アイコン付きの会話を表現できます。",
+  "category": "su",
+  "icon": "admin-comments",
+  "keywords": [
+    "トーク",
+    "会話",
+    "吹き出し",
+    "speak",
+    "person"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "talk",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}
