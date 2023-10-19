@@ -21,7 +21,7 @@ function humi_register_blocks()
   // talkを登録
   // register_block_type(__DIR__ . '/talk/build');
 
-  $block_types = ['talk', 'alert']; // ここにブロックタイプを追加
+  $block_types = ['alert', 'limited-time', 'talk']; // ここにブロックタイプを追加
 
   foreach ($block_types as $block_type) {
     register_block_type(__DIR__ . '/' . $block_type . '/build');
