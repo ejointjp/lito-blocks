@@ -26,18 +26,18 @@ export default function Edit({ attributes, setAttributes }) {
 
   return (
     <div {...blockProps}>
-      <div className="wp-block-humi-profile-avatar">
+      <div className="wp-block-lito-profile-avatar">
         <MediaUpload onSelect={onSelectImage} type="image" value={avatarID} render={renderAvatar} />
       </div>
 
-      <div className="wp-block-humi-profile-name">
+      <div className="wp-block-lito-profile-name">
         <PlainText
           value={name}
           onChange={(value) => setAttributes({ name: value })}
           placeholder="名前"
         />
       </div>
-      <div className="wp-block-humi-profile-title">
+      <div className="wp-block-lito-profile-title">
         <PlainText
           value={title}
           onChange={(value) => setAttributes({ title: value })}
@@ -46,7 +46,7 @@ export default function Edit({ attributes, setAttributes }) {
       </div>
 
       <RichText
-        className="wp-block-humi-profile-description"
+        className="wp-block-lito-profile-description"
         value={description}
         onChange={(value) => setAttributes({ description: value })}
         placeholder="プロフィール文を入力"

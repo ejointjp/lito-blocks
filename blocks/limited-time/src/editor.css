@@ -1,4 +1,4 @@
-.wp-block-humi-limited-time {
+.wp-block-lito-limited-time {
 }
 
 .limited-time-metadata {
@@ -9,10 +9,10 @@
 }
 
 .limited-time-label {
-  background-color: var(--humib-bg-base);
+  background-color: var(--litob-bg-base);
   padding: 0.125rem 0.5rem;
   border-radius: 0.25rem;
-  font-size: var(--humib-font-size-sm);
+  font-size: var(--litob-font-size-sm);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -23,9 +23,9 @@
 }
 
 .limited-time-date {
-  font-size: var(--humib-font-size-sm);
+  font-size: var(--litob-font-size-sm);
 }
 
-.wp-block-humi-limited-time:has(.limited-time-is-hidden):not(.is-selected, .has-child-selected) {
+.wp-block-lito-limited-time:has(.limited-time-is-hidden):not(.is-selected, .has-child-selected) {
   opacity: 0.4;
 }

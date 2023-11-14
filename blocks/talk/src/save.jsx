@@ -11,14 +11,14 @@ export default function save({ attributes }) {
 
   return (
     <div {...blockProps}>
-      <div className="wp-block-humi-talk-inner">
-        <div className="wp-block-humi-talk-avatar">
-          <div className="wp-block-humi-talk-figure" style={figureStyles}>
+      <div className="wp-block-lito-talk-inner">
+        <div className="wp-block-lito-talk-avatar">
+          <div className="wp-block-lito-talk-figure" style={figureStyles}>
             <img src={avatarURL} alt={avatarAlt} className={`wp-image-${avatarID}`} />
           </div>
-          <div className="wp-block-humi-talk-name">{avatarName}</div>
+          <div className="wp-block-lito-talk-name">{avatarName}</div>
         </div>
-        <div className="wp-block-humi-talk-comment">
+        <div className="wp-block-lito-talk-comment">
           <RichText.Content value={comment} />
         </div>
       </div>

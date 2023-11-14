@@ -1,14 +1,14 @@
 /* プロフィール */
 
-.wp-block-humi-profile-avatar {
+.wp-block-lito-profile-avatar {
   & button {
     display: grid;
     height: 100%;
   }
 }
 
-.wp-block-humi-profile-name,
-.wp-block-humi-profile-title {
+.wp-block-lito-profile-name,
+.wp-block-lito-profile-title {
   margin-top: 0;
 
   & > textarea {
@@ -18,7 +18,7 @@
   }
 }
 
-.wp-block-humi-profile-description {
+.wp-block-lito-profile-description {
   & * + * {
     margin-top: 0.75rem !important;
   }

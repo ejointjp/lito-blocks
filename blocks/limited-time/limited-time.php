@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name:       Humi Blocks - Limited Time
+ * Plugin Name:       Litography Blocks - Limited Time
  * Description:       Example block scaffolded with Create Block tool.
  * Requires at least: 6.1
  * Requires PHP:      7.0
@@ -9,9 +9,9 @@
  * Author:            The WordPress Contributors
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       humi-blocks
+ * Text Domain:       litography-blocks
  *
- * @package           humi-blocks
+ * @package           litography-blocks
  */
 
 /**
@@ -21,13 +21,13 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function humib_limited_time_init() {
+function litob_limited_time_init() {
 	register_block_type(__DIR__ . '/build');
 }
-add_action('init', 'humib_limited_time_init');
+add_action('init', 'litob_limited_time_init');
 
 // DateTime設定に応じて非表示にする
-function humi_date_time($content, $block) {
+function litob_date_time($content, $block) {
 	// Dates entered in the block editor are localized.
 	$attributes      = $block['attrs'];
 	$start_date_time = isset($attributes['startDateTime']) ? $attributes['startDateTime'] : false;
@@ -53,4 +53,4 @@ function humi_date_time($content, $block) {
 
 	return $content;
 }
-add_action('render_block', 'humi_date_time', 10, 2);
+add_action('render_block', 'litob_date_time', 10, 2);

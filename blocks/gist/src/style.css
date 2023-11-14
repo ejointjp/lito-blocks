@@ -1,27 +1,27 @@
-.wp-block-humi-gist {
+.wp-block-lito-gist {
   position: relative;
   padding-top: 1rem;
 
-  & .wp-block-humi-marker-text .humib-icon {
-    color: var(--humib-marker-text-color, var(--humib-gist-color, var(--wp--custom--color--info)));
+  & .wp-block-lito-marker-text .litob-icon {
+    color: var(--litob-marker-text-color, var(--litob-gist-color, var(--wp--custom--color--info)));
   }
 
-  & .humib-inner-blocks {
-    background-color: var(--humib-bg-base);
-    border-radius: var(--humib-box-radius);
-    padding: var(--humib-box-padding);
+  & .litob-inner-blocks {
+    background-color: var(--litob-bg-base);
+    border-radius: var(--litob-box-radius);
+    padding: var(--litob-box-padding);
     padding-top: 2rem;
   }
 }
 
-.wp-block-humi-gist-label {
+.wp-block-lito-gist-label {
   position: absolute;
   top: 0;
   left: 1rem;
   padding: 0.375rem 1rem;
-  font-size: var(--wp--preset--font-size--small, var(--humib-font-size-sm));
+  font-size: var(--wp--preset--font-size--small, var(--litob-font-size-sm));
   color: white;
-  background-color: var(--humib-gist-color, var(--wp--custom--color--info));
+  background-color: var(--litob-gist-color, var(--wp--custom--color--info));
   border-radius: 999px;
 
   & + .gist-list {

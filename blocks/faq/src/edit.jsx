@@ -6,19 +6,19 @@ export default function edit({ attributes, setAttributes }) {
 
   return (
     <div {...blockProps}>
-      <div className="wp-block-humi-faq-q wp-block-humi-faq-row">
-        <div className="wp-block-humi-faq-label">Q</div>
+      <div className="wp-block-lito-faq-q wp-block-lito-faq-row">
+        <div className="wp-block-lito-faq-label">Q</div>
         <RichText
-          className="wp-block-humi-faq-q-content"
+          className="wp-block-lito-faq-q-content"
           placeholder="質問を入力"
           value={question}
           allowedFormats={[]}
           onChange={(value) => setAttributes({ question: value })}
         />
       </div>
-      <div className="wp-block-humi-faq-a wp-block-humi-faq-row">
-        <div className="wp-block-humi-faq-label">A</div>
-        <div className="humib-inner-blocks">
+      <div className="wp-block-lito-faq-a wp-block-lito-faq-row">
+        <div className="wp-block-lito-faq-label">A</div>
+        <div className="litob-inner-blocks">
           <InnerBlocks />
         </div>
       </div>

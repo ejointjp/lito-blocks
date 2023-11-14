@@ -12,7 +12,7 @@ export default function edit({ attributes, setAttributes }) {
     <div {...blockProps}>
       <InspectorControls key="setting">
         <PanelBody title="表示するシェアボタン" initialOpen={true} icon={icon}>
-          <BaseControl className="humib-base-control">
+          <BaseControl className="litob-base-control">
             <CheckboxControl
               label="X (Twitter)"
               checked={twitter}
@@ -53,7 +53,7 @@ export default function edit({ attributes, setAttributes }) {
         </PanelBody>
       </InspectorControls>
 
-      <ServerSideRender block="humi/share-btn" attributes={attributes} />
+      <ServerSideRender block="lito/share-btn" attributes={attributes} />
     </div>
   );
 }

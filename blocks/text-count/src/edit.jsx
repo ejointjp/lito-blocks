@@ -83,10 +83,10 @@ export default function edit({ attributes, setAttributes }) {
       </InspectorControls>
 
       <div {...blockProps}>
-        {/* <span className="wp-block-humi-text-count-pre-text">{preText}</span>
-        <span className="wp-block-humi-text-count-text">文字数</span>
-        <span className="wp-block-humi-text-count-post-text">{postText}</span> */}
-        <ServerSideRender block="humi/text-count" attributes={attributes} />
+        {/* <span className="wp-block-lito-text-count-pre-text">{preText}</span>
+        <span className="wp-block-lito-text-count-text">文字数</span>
+        <span className="wp-block-lito-text-count-post-text">{postText}</span> */}
+        <ServerSideRender block="lito/text-count" attributes={attributes} />
       </div>
     </>
   );

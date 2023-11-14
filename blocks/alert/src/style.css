@@ -1,44 +1,44 @@
-.wp-block-humi-alert {
-  --humib-color: initial;
+.wp-block-lito-alert {
+  --litob-color: initial;
   container-type: inline-size;
 
   &.is-style-info {
-    --humib-color: var(--wp--custom--color--info, #0ea5e9);
+    --litob-color: var(--wp--custom--color--info, #0ea5e9);
   }
   &.is-style-success {
-    --humib-color: var(--wp--custom--color--success, #22c55e);
+    --litob-color: var(--wp--custom--color--success, #22c55e);
   }
   &.is-style-warning {
-    --humib-color: var(--wp--custom--color--warning, #f59e0b);
+    --litob-color: var(--wp--custom--color--warning, #f59e0b);
   }
   &.is-style-danger {
-    --humib-color: var(--wp--custom--color--danger, #ef4444);
+    --litob-color: var(--wp--custom--color--danger, #ef4444);
   }
 }
 
-.wp-block-humi-alert-inner {
+.wp-block-lito-alert-inner {
   display: grid;
   gap: 1rem;
   min-height: 4rem;
-  padding: var(--humib-box-padding);
-  border-radius: var(--humib-box-radius);
-  border-left: 0.25rem solid var(--humib-color);
-  background-color: var(--humib-bg-base);
+  padding: var(--litob-box-padding);
+  border-radius: var(--litob-box-radius);
+  border-left: 0.25rem solid var(--litob-color);
+  background-color: var(--litob-bg-base);
 
   :where(.is-style-info, .is-style-success, .is-style-warning, .is-style-danger) > & {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
 
-  & > .humib-icon {
-    color: var(--humib-color);
+  & > .litob-icon {
+    color: var(--litob-color);
     width: 1.5rem;
     transform: translateY(0.25rem);
   }
 }
 
 @container (768px <= width) {
-  .wp-block-humi-alert-inner {
+  .wp-block-lito-alert-inner {
     gap: 0.75rem;
     grid-template-columns: auto 1fr;
   }

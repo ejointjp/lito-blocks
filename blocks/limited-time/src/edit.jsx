@@ -89,7 +89,7 @@ export default function Edit({ attributes, setAttributes }) {
         <PanelBody
           title="表示開始日時"
           initialOpen={true}
-          className="humib-components-panel-body humi-limited-time-panel-body"
+          className="litob-components-panel-body litob-limited-time-panel-body"
         >
           <DateTimePicker
             currentDate={startDateTime}
@@ -98,7 +98,7 @@ export default function Edit({ attributes, setAttributes }) {
           />
 
           <Button
-            className="humib-components-button components-button is-tertiary"
+            className="litob-components-button components-button is-tertiary"
             onClick={() => setAttributes({ startDateTime: null })}
           >
             クリア
@@ -108,7 +108,7 @@ export default function Edit({ attributes, setAttributes }) {
         <PanelBody
           title="表示終了日時"
           initialOpen={true}
-          className="humib-components-panel-body humi-limited-time-panel-body"
+          className="litob-components-panel-body litob-limited-time-panel-body"
         >
           <DateTimePicker
             currentDate={endDateTime}
@@ -116,7 +116,7 @@ export default function Edit({ attributes, setAttributes }) {
             // onReset={() => setAttributes({ endDateTime: null })}  なんかボタンなくなったから自力で実装した
           />
           <Button
-            className="humib-components-button components-button is-tertiary"
+            className="litob-components-button components-button is-tertiary"
             onClick={() => setAttributes({ endDateTime: null })}
           >
             クリア
@@ -125,7 +125,7 @@ export default function Edit({ attributes, setAttributes }) {
       </InspectorControls>
 
       <div className="limited-time-metadata">{showDateTime()}</div>
-      <div className="humib-inner-blocks">
+      <div className="litob-inner-blocks">
         <InnerBlocks />
       </div>
     </div>

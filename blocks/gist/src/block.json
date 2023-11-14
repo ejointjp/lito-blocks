@@ -1,10 +1,10 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "humi/gist",
+  "name": "lito/gist",
   "version": "0.1.0",
-  "title": "Humi ここがポイント",
-  "category": "humi-blocks",
+  "title": "ここがポイント",
+  "category": "litography-blocks",
   "icon": "editor-ul",
   "description": "",
   "attributes": {
@@ -26,7 +26,7 @@
     "html": false
   },
   "keywords": ["リスト", "list", "ポイント", "point", "まとめ", "概要", "summary"],
-  "textdomain": "humi-blocks",
+  "textdomain": "litography-blocks",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css"

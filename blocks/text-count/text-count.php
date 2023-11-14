@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name:       Humi Blocks - Text Count
+ * Plugin Name:       Litography Blocks - Text Count
  * Description:       Example block scaffolded with Create Block tool.
  * Requires at least: 6.1
  * Requires PHP:      7.0
@@ -9,9 +9,9 @@
  * Author:            The WordPress Contributors
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       humi-blocks
+ * Text Domain:       litography-blocks
  *
- * @package           humi-blocks
+ * @package           litography-blocks
  */
 
 /**
@@ -21,11 +21,11 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function humib_text_count_init() {
+function litob_text_count_init() {
   register_block_type(
     __DIR__ . '/build',
     [
-      'render_callback' => 'humib_text_count_render_callback',
+      'render_callback' => 'litob_text_count_render_callback',
       'attributes' => [
         "wordsPerMinute" => [
           "type" => "number",
@@ -55,9 +55,9 @@ function humib_text_count_init() {
     ]
   );
 }
-add_action('init', 'humib_text_count_init');
+add_action('init', 'litob_text_count_init');
 
-function humib_text_count_render_callback($attributes, $content) {
+function litob_text_count_render_callback($attributes, $content) {
   // 記事の内容を取得
   $content = get_the_content();
 
@@ -80,5 +80,5 @@ function humib_text_count_render_callback($attributes, $content) {
   $placeholder = $attributes['showType'] === 'readingTime' ? '読了時間' : '文字数';
   $show = $count ? $count : '（' . $placeholder . '）';
 
-  return sprintf('<div class="wp-block-humi-text-count"><span>%s</span><span>%s</span><span>%s</span></div>', $attributes['preText'], $show, $attributes['postText']);
+  return sprintf('<div class="wp-block-lito-text-count"><span>%s</span><span>%s</span><span>%s</span></div>', $attributes['preText'], $show, $attributes['postText']);
 }

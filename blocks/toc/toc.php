@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name:       Humi Blocks - Toc
+ * Plugin Name:       Litography Blocks - Toc
  * Description:       Example block scaffolded with Create Block tool.
  * Requires at least: 6.1
  * Requires PHP:      7.0
@@ -9,9 +9,9 @@
  * Author:            The WordPress Contributors
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       humi-blocks
+ * Text Domain:       litography-blocks
  *
- * @package           humi-blocks
+ * @package           litography-blocks
  */
 
 /**
@@ -21,11 +21,11 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function create_block_toc_block_init() {
+function litob_toc_init() {
 	register_block_type(
 		__DIR__ . '/build',
 		[
-			'render_callback' => 'humi_toc_render_callback',
+			'render_callback' => 'litob_toc_render_callback',
 			// 'attributes' => [
 			// 	'postCount' => [
 			// 		'type' => 'number',
@@ -35,18 +35,18 @@ function create_block_toc_block_init() {
 		]
 	);
 }
-add_action('init', 'create_block_toc_block_init');
+add_action('init', 'litob_toc_init');
 
 
-function humi_toc_render_callback($attributes) {
-	return '<div class="wp-block-humi-toc"></div>';
+function litob_toc_render_callback($attributes) {
+	return '<div class="wp-block-lito-toc"></div>';
 }
 
 // scriptタグにdeferを付与
-function humi_add_defer_attribute($tag, $handle) {
-	if ('humi-toc-view-script' === $handle) {
+function litob_add_defer_attribute($tag, $handle) {
+	if ('lito-toc-view-script' === $handle) {
 		return str_replace(' src', ' defer="defer" src', $tag);
 	}
 	return $tag;
 }
-add_filter('script_loader_tag', 'humi_add_defer_attribute', 10, 2);
+add_filter('script_loader_tag', 'litob_add_defer_attribute', 10, 2);

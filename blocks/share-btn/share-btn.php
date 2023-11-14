@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name:       Humi Blocks - Share Btn
+ * Plugin Name:       Litography Blocks - Share Btn
  * Description:       Example block scaffolded with Create Block tool.
  * Requires at least: 6.1
  * Requires PHP:      7.0
@@ -9,9 +9,9 @@
  * Author:            The WordPress Contributors
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       humi-blocks
+ * Text Domain:       litography-blocks
  *
- * @package           humi-blocks
+ * @package           litography-blocks
  */
 
 /**
@@ -21,11 +21,11 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function humib_share_button_init() {
+function litob_share_button_init() {
 	register_block_type(
 		__DIR__ . '/build',
 		[
-			'render_callback' => 'humib_share_button_render_callback', // レンダリングする関数名を指定
+			'render_callback' => 'litob_share_button_render_callback', // レンダリングする関数名を指定
 
 			//属性を設定（連想配列で指定）
 			'attributes' => [
@@ -57,10 +57,10 @@ function humib_share_button_init() {
 		]
 	);
 }
-add_action('init', 'humib_share_button_init');
+add_action('init', 'litob_share_button_init');
 
-function humib_share_button_render_callback($block_attributes, $content) {
-	$html = '<div class="wp-block-humi-share-btn">';
+function litob_share_button_render_callback($block_attributes, $content) {
+	$html = '<div class="wp-block-lito-share-btn">';
 
 	// Twitter
 	if ($block_attributes['twitter']) :
@@ -75,11 +75,11 @@ function humib_share_button_render_callback($block_attributes, $content) {
 		ob_start();
 
 ?>
-		<a class="wp-block-humi-share-btn-item" href="<?php echo esc_url($share_url); ?>" target="_blank" rel="nofollow noopener noreferrer">
-			<span class="wp-block-humi-share-btn-icon">
+		<a class="wp-block-lito-share-btn-item" href="<?php echo esc_url($share_url); ?>" target="_blank" rel="nofollow noopener noreferrer">
+			<span class="wp-block-lito-share-btn-icon">
 				<?php include plugin_dir_path(__FILE__) . '../../svg/x.svg'; ?>
 			</span>
-			<span class="wp-block-humi-share-btn-label">ポスト</span>
+			<span class="wp-block-lito-share-btn-label">ポスト</span>
 		</a>
 	<?php
 		$html .= ob_get_clean();
@@ -90,13 +90,13 @@ function humib_share_button_render_callback($block_attributes, $content) {
 		$share_url = "https://www.facebook.com/sharer/sharer.php?u=" .  get_permalink(get_the_ID());
 		ob_start();
 	?>
-		<a class="wp-block-humi-share-btn-item" href="<?php echo esc_url($share_url); ?>" target="_blank" rel="nofollow noopener noreferrer">
+		<a class="wp-block-lito-share-btn-item" href="<?php echo esc_url($share_url); ?>" target="_blank" rel="nofollow noopener noreferrer">
 			<?php //get_template_part('components/icon/facebook');
 			?>
-			<span class="wp-block-humi-share-btn-icon">
+			<span class="wp-block-lito-share-btn-icon">
 				<?php include plugin_dir_path(__FILE__) . '../../svg/facebook.svg'; ?>
 			</span>
-			<span class="wp-block-humi-share-btn-label">シェア</span>
+			<span class="wp-block-lito-share-btn-label">シェア</span>
 		</a>
 	<?php
 		$html .= ob_get_clean();
@@ -112,11 +112,11 @@ function humib_share_button_render_callback($block_attributes, $content) {
 		$share_url = add_query_arg($args, $base_url);
 		ob_start();
 	?>
-		<a class="wp-block-humi-share-btn-item" href="<?php echo esc_url($share_url); ?>" target="_blank" rel="nofollow noopener noreferrer">
-			<span class="wp-block-humi-share-btn-icon">
+		<a class="wp-block-lito-share-btn-item" href="<?php echo esc_url($share_url); ?>" target="_blank" rel="nofollow noopener noreferrer">
+			<span class="wp-block-lito-share-btn-icon">
 				<?php include plugin_dir_path(__FILE__) . '../../svg/hatebu.svg'; ?>
 			</span>
-			<span class="wp-block-humi-share-btn-label">ブックマーク</span>
+			<span class="wp-block-lito-share-btn-label">ブックマーク</span>
 		</a>
 	<?php
 		$html .= ob_get_clean();
@@ -127,11 +127,11 @@ function humib_share_button_render_callback($block_attributes, $content) {
 		ob_start();
 		$share_url = "https://getpocket.com/save?url=" .  get_permalink(get_the_ID());
 	?>
-		<a class="wp-block-humi-share-btn-item" href="<?php echo esc_url($share_url); ?>" target="_blank" rel="nofollow noopener noreferrer">
-			<span class="wp-block-humi-share-btn-icon">
+		<a class="wp-block-lito-share-btn-item" href="<?php echo esc_url($share_url); ?>" target="_blank" rel="nofollow noopener noreferrer">
+			<span class="wp-block-lito-share-btn-icon">
 				<?php include plugin_dir_path(__FILE__) . '../../svg/pocket.svg'; ?>
 			</span>
-			<span class="wp-block-humi-share-btn-label">Pocket</span>
+			<span class="wp-block-lito-share-btn-label">Pocket</span>
 		</a>
 <?php
 		$html .= ob_get_clean();

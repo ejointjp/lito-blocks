@@ -6,11 +6,11 @@ export default function save({ attributes }) {
 
   return (
     <div {...blockProps}>
-      <div className="wp-block-humi-alert-inner">
+      <div className="wp-block-lito-alert-inner">
         {iconName !== "" && (
-          <span className="material-symbols-outlined humib-icon">{iconName}</span>
+          <span className="material-symbols-outlined litob-icon">{iconName}</span>
         )}
-        <div className="humib-inner-blocks">
+        <div className="litob-inner-blocks">
           <InnerBlocks.Content />
         </div>
       </div>

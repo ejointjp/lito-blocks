@@ -1,10 +1,10 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "humi/limited-time",
+  "name": "lito/limited-time",
   "version": "0.1.0",
-  "title": "Humi 期間限定表示",
-  "category": "humi-blocks",
+  "title": "期間限定表示",
+  "category": "litography-blocks",
   "icon": "clock",
   "description": "内包ブロックの表示期間を指定できます",
   "attributes": {
@@ -21,7 +21,7 @@
   "supports": {
     "html": false
   },
-  "textdomain": "humi-blocks",
+  "textdomain": "litography-blocks",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css"

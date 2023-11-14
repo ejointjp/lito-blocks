@@ -1,10 +1,10 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "humi/talk",
+  "name": "lito/talk",
   "version": "0.1.0",
-  "title": "Humi 吹き出し",
-  "category": "humi-blocks",
+  "title": "吹き出し",
+  "category": "litography-blocks",
   "icon": "businessperson",
   "description": "アイコン付きの吹き出し",
   "example": {},
@@ -12,7 +12,7 @@
     "html": false
   },
   "keywords": ["bubble", "person", "会話", "トーク"],
-  "textdomain": "humi-blocks",
+  "textdomain": "litography-blocks",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",

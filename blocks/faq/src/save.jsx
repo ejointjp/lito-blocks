@@ -6,15 +6,15 @@ export default function save({ attributes }) {
 
   return (
     <div {...blockProps}>
-      <div className="wp-block-humi-faq-q wp-block-humi-faq-row">
-        <div className="wp-block-humi-faq-label">Q</div>
-        <p className="wp-block-humi-faq-q-content">
+      <div className="wp-block-lito-faq-q wp-block-lito-faq-row">
+        <div className="wp-block-lito-faq-label">Q</div>
+        <p className="wp-block-lito-faq-q-content">
           <RichText.Content value={question} />
         </p>
       </div>
-      <div className="wp-block-humi-faq-a wp-block-humi-faq-row">
-        <div className="wp-block-humi-faq-label">A</div>
-        <div className="humib-inner-blocks">
+      <div className="wp-block-lito-faq-a wp-block-lito-faq-row">
+        <div className="wp-block-lito-faq-label">A</div>
+        <div className="litob-inner-blocks">
           <InnerBlocks.Content />
         </div>
       </div>

@@ -10,10 +10,10 @@ import { select, dispatch } from "@wordpress/data";
 export default function edit({ attributes, setAttributes, clientId }) {
   const { iconName, color, label } = attributes;
   const blockProps = useBlockProps({
-    style: { "--humib-gist-color": color },
+    style: { "--litob-gist-color": color },
   });
-  const allowedBlocks = ["humi/marker-text"];
-  const template = [["humi/marker-text"]];
+  const allowedBlocks = ["lito/marker-text"];
+  const template = [["lito/marker-text"]];
 
   const onClickIconButton = (icon) => {
     if (icon.value === "") {
@@ -28,11 +28,11 @@ export default function edit({ attributes, setAttributes, clientId }) {
   };
 
   // innerBlock要素のattributesを変更
-  const changeChildrenValue = (humib_alert_) => {
+  const changeChildrenValue = (litob_alert_) => {
     // innerBlocksの要素をすべて取得
     const children = select("core/block-editor").getBlocksByClientId(clientId)[0].innerBlocks;
     children.forEach((child) => {
-      dispatch("core/block-editor").updateBlockAttributes(child.clientId, humib_alert_);
+      dispatch("core/block-editor").updateBlockAttributes(child.clientId, litob_alert_);
     });
   };
 
@@ -42,7 +42,7 @@ export default function edit({ attributes, setAttributes, clientId }) {
     const lastChild = children.pop();
     const { iconName, color } = lastChild.attributes;
 
-    dispatch("core/block-editor").insertBlocks(createBlock("humi/marker-text"), 9999, clientId);
+    dispatch("core/block-editor").insertBlocks(createBlock("lito/marker-text"), 9999, clientId);
 
     children = select("core/block-editor").getBlocksByClientId(clientId)[0].innerBlocks;
     const newChild = children.pop();
@@ -58,24 +58,24 @@ export default function edit({ attributes, setAttributes, clientId }) {
           <BaseControl
             label="マーカー"
             help="マーカーを一括で変更します。子要素単体でマーカーを指定した場合はそちらが優先されます。"
-            className="humib-base-control"
+            className="litob-base-control"
           >
-            <div className="humib-editor-icon">
+            <div className="litob-editor-icon">
               {materialIcons.map((icon, i) => {
                 return (
                   <div
                     key={i}
                     className={
                       icon.value === iconName
-                        ? "humib-editor-icon-item current"
-                        : "humib-editor-icon-item"
+                        ? "litob-editor-icon-item current"
+                        : "litob-editor-icon-item"
                     }
                     onClick={() => onClickIconButton(icon)}
                   >
                     {icon.value !== "" ? (
                       <span className={icon.className}>{icon.value}</span>
                     ) : (
-                      <div className="humib-editor-icon-item-blank">なし</div>
+                      <div className="litob-editor-icon-item-blank">なし</div>
                     )}
                   </div>
                 );
@@ -85,7 +85,7 @@ export default function edit({ attributes, setAttributes, clientId }) {
           <BaseControl
             label="カラー"
             help="ラベルとマーカーのカラーを一括で変更します。子要素単体でカラーを設定した場合はそちらが優先されます。"
-            className="humib-base-control"
+            className="litob-base-control"
           >
             <ColorPalette
               colors={stateColors}
@@ -97,18 +97,18 @@ export default function edit({ attributes, setAttributes, clientId }) {
       </InspectorControls>
 
       <RichText
-        className="wp-block-humi-gist-label"
+        className="wp-block-lito-gist-label"
         onChange={(value) => setAttributes({ label: value })}
         placeholder="ラベルを入力"
         value={label}
       />
 
-      <div className="humib-inner-blocks">
+      <div className="litob-inner-blocks">
         <InnerBlocks
           allowedBlocks={allowedBlocks}
           template={template}
           renderAppender={() => (
-            <button type="button" className="humib-add-button" onClick={addInnerBlock}>
+            <button type="button" className="litob-add-button" onClick={addInnerBlock}>
               <span className="material-symbols-outlined">add_box</span>
             </button>
           )}

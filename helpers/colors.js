@@ -1,27 +1,27 @@
 const stateColors = [
   {
     name: "info",
-    color: "var(--humib-info)",
+    color: "var(--litob-info)",
   },
   {
     name: "success",
-    color: "var(--humib-success)",
+    color: "var(--litob-success)",
   },
   {
     name: "warning",
-    color: "var(--humib-warning)",
+    color: "var(--litob-warning)",
   },
   {
     name: "danger",
-    color: "var(--humib-danger)",
+    color: "var(--litob-danger)",
   },
   {
     name: "primary",
-    color: "var(--humib-primary)",
+    color: "var(--litob-primary)",
   },
   {
     name: "secondary",
-    color: "var(--humib-secondary)",
+    color: "var(--litob-secondary)",
   },
 ];
 

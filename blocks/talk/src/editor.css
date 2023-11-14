@@ -1,17 +1,17 @@
-.wp-block-humi-talk-figure .image-button {
+.wp-block-lito-talk-figure .image-button {
   display: block !important;
 }
 
-.wp-block-humi-talk-name .block-editor-plain-text {
+.wp-block-lito-talk-name .block-editor-plain-text {
   padding: 0.25rem;
 }
 
-.wp-block-humi-talk.is-style-right .wp-block-humi-talk-name .block-editor-plain-text {
+.wp-block-lito-talk.is-style-right .wp-block-lito-talk-name .block-editor-plain-text {
   text-align: end;
 }
 
 @container (768px <= width) {
-  .wp-block-humi-talk-name .block-editor-plain-text {
+  .wp-block-lito-talk-name .block-editor-plain-text {
     text-align: center !important;
   }
 }

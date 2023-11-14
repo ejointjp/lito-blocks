@@ -1,17 +1,17 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "humi/text-count",
+  "name": "lito/text-count",
   "version": "0.1.0",
-  "title": "Humi 記事の文字数",
-  "category": "humi-blocks",
+  "title": "記事の文字数",
+  "category": "litography-blocks",
   "icon": "calculator",
   "description": "Example block scaffolded with Create Block tool.",
   "example": {},
   "supports": {
     "html": false
   },
-  "textdomain": "humi-blocks",
+  "textdomain": "litography-blocks",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",

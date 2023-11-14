@@ -1,11 +1,11 @@
 /* マーカーテキスト */
-.wp-block-humi-marker-text {
+.wp-block-lito-marker-text {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 0.75rem;
 
-  & .humib-icon {
-    color: var(--humib-marker-text-color, var(--wp--custom--color--info));
+  & .litob-icon {
+    color: var(--litob-marker-text-color, var(--wp--custom--color--info));
     transform: translateY(0.3125rem);
   }
 }

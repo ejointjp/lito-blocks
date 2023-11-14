@@ -1,33 +1,33 @@
-.wp-block-humi-share-btn-label {
+.wp-block-lito-share-btn-label {
   display: flex;
   gap: 0.25rem;
-  color: var(--humib-font-size-base);
+  color: var(--litob-font-size-base);
 }
 
-.wp-block-humi-share-btn {
+.wp-block-lito-share-btn {
   display: flex;
   gap: 0.55rem;
   flex-wrap: wrap;
 }
 
-.wp-block-humi-share-btn-item {
+.wp-block-lito-share-btn-item {
   display: flex;
   gap: 0.25rem;
   align-items: center;
   padding: 0.25rem 1rem;
   border-radius: var(--wp--custom--radius--sm);
-  background-color: var(--humib-bg-base);
+  background-color: var(--litob-bg-base);
   outline: 2px solid transparent;
   outline-offset: 2px;
   transition: 0.3s;
 
-  font-size: var(--humib-font-size-sm);
+  font-size: var(--litob-font-size-sm);
   &:hover {
     background-color: #e4e4e7;
   }
 }
 
-.wp-block-humi-share-btn-icon {
+.wp-block-lito-share-btn-icon {
   width: 1.25rem;
   height: 1.25rem;
 }

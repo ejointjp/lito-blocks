@@ -1,10 +1,10 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "humi/toc",
+  "name": "lito/toc",
   "version": "0.1.0",
-  "title": "Humi 目次",
-  "category": "humi-blocks",
+  "title": "目次",
+  "category": "litography-blocks",
   "icon": "list-view",
   "description": "",
   "example": {},
@@ -17,7 +17,7 @@
     "toc",
     "table of contents"
   ],
-  "textdomain": "humi-blocks",
+  "textdomain": "litography-blocks",
   "editorScript": "file:./index.js",
   "style": "file:./style-index.css",
   "viewScript": "file:./view.js"

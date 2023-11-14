@@ -4,15 +4,15 @@ export default function save({ attributes }) {
   const { content, iconName, color } = attributes;
   const blockProps = useBlockProps.save({
     className: "marker-text",
-    style: { "--humib-marker-text-color": color },
+    style: { "--litob-marker-text-color": color },
   });
 
   return (
     <p {...blockProps}>
-      {iconName !== "" && <span className="material-symbols-outlined humib-icon">{iconName}</span>}
+      {iconName !== "" && <span className="material-symbols-outlined litob-icon">{iconName}</span>}
       <RichText.Content
         tagName="span"
-        className="wp-block-humi-marker-text-content"
+        className="wp-block-lito-marker-text-content"
         value={content}
       />
     </p>

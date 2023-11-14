@@ -1,4 +1,4 @@
-.wp-block-humi-gist {
+.wp-block-lito-gist {
   & .block-editor-block-list__layout {
     padding-bottom: 4rem;
     position: relative;
@@ -11,7 +11,7 @@
   }
 }
 
-.humib-add-button {
+.litob-add-button {
   padding: 1rem;
   appearance: none;
   border: none;

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name:       Humi Blocks - FAQ
+ * Plugin Name:       Litography Blocks - FAQ
  * Description:       Example block scaffolded with Create Block tool.
  * Requires at least: 6.1
  * Requires PHP:      7.0
@@ -9,9 +9,9 @@
  * Author:            The WordPress Contributors
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       humi-blocks
+ * Text Domain:       litography-blocks
  *
- * @package           humi-blocks
+ * @package           litography-blocks
  */
 
 /**
@@ -21,7 +21,7 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function humib_faq_init() {
+function litob_faq_init() {
 	register_block_type(__DIR__ . '/build');
 }
-add_action('init', 'humib_faq_init');
+add_action('init', 'litob_faq_init');

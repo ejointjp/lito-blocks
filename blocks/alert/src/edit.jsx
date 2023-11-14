@@ -17,21 +17,21 @@ export default function edit({ attributes, setAttributes }) {
     <>
       <InspectorControls>
         <PanelBody title="アイコン" icon={icon} initialOpen={true}>
-          <BaseControl label="アラートアイコンを選択" id="humi/alert/icon">
-            <div className="humib-editor-icon">
+          <BaseControl label="アラートアイコンを選択" id="lito/alert/icon">
+            <div className="litob-editor-icon">
               {icons.map((icon, i) => {
                 const isCurrent = icon.value === iconName;
 
                 return (
                   <div
                     key={i}
-                    className={`humib-editor-icon-item ${isCurrent ? "current" : ""}`}
+                    className={`litob-editor-icon-item ${isCurrent ? "current" : ""}`}
                     onClick={() => onClickIconButton(icon)}
                   >
                     {icon.value !== "" ? (
                       <span className="material-symbols-outlined">{icon.value}</span>
                     ) : (
-                      <div className="humib-editor-icon-item-blank">なし</div>
+                      <div className="litob-editor-icon-item-blank">なし</div>
                     )}
                   </div>
                 );
@@ -42,11 +42,11 @@ export default function edit({ attributes, setAttributes }) {
       </InspectorControls>
 
       <div {...blockProps}>
-        <div className="wp-block-humi-alert-inner">
+        <div className="wp-block-lito-alert-inner">
           {iconName !== "" && (
-            <span className="material-symbols-outlined humib-icon">{iconName}</span>
+            <span className="material-symbols-outlined litob-icon">{iconName}</span>
           )}
-          <div className="humib-inner-blocks">
+          <div className="litob-inner-blocks">
             <InnerBlocks />
           </div>
         </div>

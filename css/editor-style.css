@@ -1,9 +1,9 @@
-.humib-editor-icon {
+.litob-editor-icon {
   display: flex;
   flex-wrap: wrap;
 }
 
-.humib-editor-icon-item {
+.litob-editor-icon-item {
   display: grid;
   width: 2rem;
   height: 2rem;
@@ -12,31 +12,31 @@
   border-radius: 0.25rem;
 }
 
-.humib-editor-icon-item:hover {
-  color: var(--wp--preset--color--primary, --humib-primary);
+.litob-editor-icon-item:hover {
+  color: var(--wp--preset--color--primary, --litob-primary);
 }
 
-.humib-editor-icon-item.current {
-  background-color: var(--wp--preset--color--bg-base, var(--humib-bg-base));
+.litob-editor-icon-item.current {
+  background-color: var(--wp--preset--color--bg-base, var(--litob-bg-base));
 }
 
-.humib-inner-blocks .block-editor-block-list__layout > * {
+.litob-inner-blocks .block-editor-block-list__layout > * {
   margin-top: 0;
   margin-bottom: 0;
   width: 100%;
 }
 
 /* Datetimeコンポーネントのスタイル修正 */
-.humib-components-panel-body .components-base-control,
-.humib-components-panel-body .components-base-control:last-child {
+.litob-components-panel-body .components-base-control,
+.litob-components-panel-body .components-base-control:last-child {
   margin-bottom: 0;
 }
 
-.humib-components-panel-body .components-datetime__date .components-heading {
+.litob-components-panel-body .components-datetime__date .components-heading {
   margin-bottom: 0;
   font-size: 0.6875rem !important;
 }
 
-.humi-limited-time-panel-body .humib-components-button {
+.litob-limited-time-panel-body .litob-components-button {
   margin-top: 1rem;
 }
