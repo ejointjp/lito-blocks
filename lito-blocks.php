@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: Lito Blocks
+ * Plugin Name: LitoBlocks
  * Plugin URI:
  * Description: Custom Blocks for Litography Theme.
  * Version:           0.1.0
@@ -40,7 +40,7 @@ if (!function_exists("litob_categories")) {
     return array_merge($categories, [
       [
         "slug" => "lito-blocks", // ブロックカテゴリーのスラッグ.
-        "title" => "Lito Blocks", // ブロックカテゴリーの表示名.
+        "title" => "LitoBlocks", // ブロックカテゴリーの表示名.
         // 'icon'  => 'wordpress',    //アイコンの指定（Dashicons名）.
       ],
     ]);
