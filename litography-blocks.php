@@ -53,7 +53,7 @@ function litob_enqueue() {
   wp_enqueue_style(
     "litob",
     plugin_dir_url(__FILE__) . "css/style.css",
-    ["litog"],
+    [],
     filemtime(plugin_dir_path(__FILE__) . "/css/style.css"),
     ""
   );
@@ -77,10 +77,7 @@ function litob_editor_enqueue() {
     filemtime(plugin_dir_path(__FILE__) . "/css/editor-style.css"),
     ""
   );
-}
-add_action("enqueue_block_editor_assets", "litob_editor_enqueue");
 
-function litob_enqueue_block_editor_assets() {
   /**
    * PHPで生成した値をJavaScriptに渡す
    *
@@ -88,14 +85,14 @@ function litob_enqueue_block_editor_assets() {
    * 第2引数: JavaScript内でのオブジェクト名
    * 第3引数: 渡したい値の配列
    */
-  wp_localize_script("lito-share-btn-block-editor", "SUB", [
-    "api" => admin_url("admin-ajax.php"),
-    "nonce" => wp_create_nonce("litob-ajax"),
-    "homeUrl" => home_url(),
-    "postUrl" => get_permalink(get_the_ID()),
-    "postTitle" => get_the_title(get_the_ID()),
-    "restApi" => home_url("/wp-json/wp/v2/"),
-  ]);
+  // wp_localize_script("lito-share-btn-block-editor", "SUB", [
+  //   "api" => admin_url("admin-ajax.php"),
+  //   "nonce" => wp_create_nonce("litob-ajax"),
+  //   "homeUrl" => home_url(),
+  //   "postUrl" => get_permalink(get_the_ID()),
+  //   "postTitle" => get_the_title(get_the_ID()),
+  //   "restApi" => home_url("/wp-json/wp/v2/"),
+  // ]);
 }
 
-add_action("enqueue_block_editor_assets", "litob_enqueue_block_editor_assets");
+add_action("enqueue_block_editor_assets", "litob_editor_enqueue");
