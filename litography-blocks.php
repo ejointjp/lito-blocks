@@ -40,7 +40,7 @@ if (!function_exists("litob_categories")) {
     return array_merge($categories, [
       [
         "slug" => "litography-blocks", // ブロックカテゴリーのスラッグ.
-        "title" => "Blocks", // ブロックカテゴリーの表示名.
+        "title" => "Litography Blocks", // ブロックカテゴリーの表示名.
         // 'icon'  => 'wordpress',    //アイコンの指定（Dashicons名）.
       ],
     ]);
