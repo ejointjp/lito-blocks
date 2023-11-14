@@ -4,14 +4,14 @@
   "name": "lito/profile",
   "version": "0.1.0",
   "title": "プロフィール",
-  "category": "litography-blocks",
+  "category": "lito-blocks",
   "icon": "admin-users",
   "description": "講演者などのプロフィールを表示できます。",
   "example": {},
   "supports": {
     "html": false
   },
-  "textdomain": "litography-blocks",
+  "textdomain": "lito-blocks",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",

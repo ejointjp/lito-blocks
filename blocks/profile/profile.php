@@ -9,9 +9,9 @@
  * Author:            The WordPress Contributors
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       litography-blocks
+ * Text Domain:       lito-blocks
  *
- * @package           litography-blocks
+ * @package           lito-blocks
  */
 
 /**
@@ -22,6 +22,6 @@
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function litob_profile_init() {
-	register_block_type(__DIR__ . '/build');
+  register_block_type(__DIR__ . "/build");
 }
-add_action('init', 'litob_profile_init');
+add_action("init", "litob_profile_init");

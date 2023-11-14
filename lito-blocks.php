@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Plugin Name: Litography Blocks
+ * Plugin Name: Lito Blocks
  * Plugin URI:
- * Description: Custom Blocks for Litgraphy Theme.
+ * Description: Custom Blocks for Litography Theme.
  * Version:           0.1.0
  * Requires at least: 6.2
  * Requires PHP:      7.2
@@ -12,10 +12,10 @@
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Update URI:
- * Text Domain:       litography-blocks
+ * Text Domain:       lito-blocks
  * Domain Path:       /languages
  *
- * @package: litography-blocks
+ * @package: lito-blocks
  */
 
 include plugin_dir_path(__FILE__) . "./blocks/alert/alert.php";
@@ -39,8 +39,8 @@ if (!function_exists("litob_categories")) {
   function litob_categories($categories, $post) {
     return array_merge($categories, [
       [
-        "slug" => "litography-blocks", // ブロックカテゴリーのスラッグ.
-        "title" => "Litography Blocks", // ブロックカテゴリーの表示名.
+        "slug" => "lito-blocks", // ブロックカテゴリーのスラッグ.
+        "title" => "Lito Blocks", // ブロックカテゴリーの表示名.
         // 'icon'  => 'wordpress',    //アイコンの指定（Dashicons名）.
       ],
     ]);

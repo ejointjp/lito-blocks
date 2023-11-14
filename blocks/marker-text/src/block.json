@@ -4,7 +4,7 @@
   "name": "lito/marker-text",
   "version": "0.1.0",
   "title": "マーカーテキスト",
-  "category": "litography-blocks",
+  "category": "lito-blocks",
   "icon": "yes",
   "description": "アイコンつきのテキストを作成できます",
   "attributes": {
@@ -24,7 +24,7 @@
     "html": false
   },
   "keywords": ["テキスト", "text", "マーカー", "marker", "マーク", "mark", "チェック", "check"],
-  "textdomain": "litography-blocks",
+  "textdomain": "lito-blocks",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css"

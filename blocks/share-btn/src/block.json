@@ -4,7 +4,7 @@
   "name": "lito/share-btn",
   "version": "0.1.0",
   "title": "シェアボタン",
-  "category": "litography-blocks",
+  "category": "lito-blocks",
   "icon": "share",
   "description": "",
   "attributes": {
@@ -38,7 +38,7 @@
     "html": false
   },
   "keywords": ["share", "sns", "socoal", "button"],
-  "textdomain": "litography-blocks",
+  "textdomain": "lito-blocks",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css"

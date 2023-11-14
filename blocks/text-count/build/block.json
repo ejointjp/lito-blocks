@@ -4,14 +4,14 @@
   "name": "lito/text-count",
   "version": "0.1.0",
   "title": "記事の文字数",
-  "category": "litography-blocks",
+  "category": "lito-blocks",
   "icon": "calculator",
   "description": "Example block scaffolded with Create Block tool.",
   "example": {},
   "supports": {
     "html": false
   },
-  "textdomain": "litography-blocks",
+  "textdomain": "lito-blocks",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",

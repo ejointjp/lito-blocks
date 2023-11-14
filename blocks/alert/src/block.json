@@ -4,7 +4,7 @@
   "name": "lito/alert",
   "version": "0.1.0",
   "title": "アラート",
-  "category": "litography-blocks",
+  "category": "lito-blocks",
   "icon": "info",
   "description": "アイコンつきのアラート文を作成できます",
   "example": {},
@@ -37,7 +37,7 @@
     }
   ],
   "keywords": ["コメント", "注意", "注釈"],
-  "textdomain": "litography-blocks",
+  "textdomain": "lito-blocks",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css"

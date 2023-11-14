@@ -9,9 +9,9 @@
  * Author:            The WordPress Contributors
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       litography-blocks
+ * Text Domain:       lito-blocks
  *
- * @package           litography-blocks
+ * @package           lito-blocks
  */
 
 /**
@@ -22,35 +22,35 @@
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function litob_limited_time_init() {
-	register_block_type(__DIR__ . '/build');
+  register_block_type(__DIR__ . "/build");
 }
-add_action('init', 'litob_limited_time_init');
+add_action("init", "litob_limited_time_init");
 
 // DateTime設定に応じて非表示にする
 function litob_date_time($content, $block) {
-	// Dates entered in the block editor are localized.
-	$attributes      = $block['attrs'];
-	$start_date_time = isset($attributes['startDateTime']) ? $attributes['startDateTime'] : false;
-	$end_date_time   = isset($attributes['endDateTime']) ? $attributes['endDateTime'] : false;
+  // Dates entered in the block editor are localized.
+  $attributes = $block["attrs"];
+  $start_date_time = isset($attributes["startDateTime"]) ? $attributes["startDateTime"] : false;
+  $end_date_time = isset($attributes["endDateTime"]) ? $attributes["endDateTime"] : false;
 
-	if (!$start_date_time && !$end_date_time) {
-		return $content;
-	}
+  if (!$start_date_time && !$end_date_time) {
+    return $content;
+  }
 
-	$current_date_time = wp_date('Y-m-d\TH:i:s');
+  $current_date_time = wp_date("Y-m-d\TH:i:s");
 
-	if ($start_date_time) {
-		if ($start_date_time > $current_date_time) {
-			return '';
-		}
-	}
+  if ($start_date_time) {
+    if ($start_date_time > $current_date_time) {
+      return "";
+    }
+  }
 
-	if ($end_date_time) {
-		if ($end_date_time < $current_date_time) {
-			return '';
-		}
-	}
+  if ($end_date_time) {
+    if ($end_date_time < $current_date_time) {
+      return "";
+    }
+  }
 
-	return $content;
+  return $content;
 }
-add_action('render_block', 'litob_date_time', 10, 2);
+add_action("render_block", "litob_date_time", 10, 2);

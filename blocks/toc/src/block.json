@@ -4,7 +4,7 @@
   "name": "lito/toc",
   "version": "0.1.0",
   "title": "目次",
-  "category": "litography-blocks",
+  "category": "lito-blocks",
   "icon": "list-view",
   "description": "",
   "example": {},
@@ -13,7 +13,7 @@
     "align": true
   },
   "keywords": ["目次", "toc", "table of contents"],
-  "textdomain": "litography-blocks",
+  "textdomain": "lito-blocks",
   "editorScript": "file:./index.js",
   "style": "file:./style-index.css",
   "viewScript": "file:./view.js"

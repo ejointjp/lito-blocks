@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "title": "Faq",
   "icon": "admin-comments",
-  "category": "litography-blocks",
+  "category": "lito-blocks",
   "keywords": ["faq", "qanda", "よくある質問"],
   "attributes": {
     "question": {
@@ -18,7 +18,7 @@
     "html": false,
     "anchor": true
   },
-  "textdomain": "litography-blocks",
+  "textdomain": "lito-blocks",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css"

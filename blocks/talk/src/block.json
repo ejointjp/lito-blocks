@@ -4,7 +4,7 @@
   "name": "lito/talk",
   "version": "0.1.0",
   "title": "吹き出し",
-  "category": "litography-blocks",
+  "category": "lito-blocks",
   "icon": "businessperson",
   "description": "アイコン付きの吹き出し",
   "example": {},
@@ -12,7 +12,7 @@
     "html": false
   },
   "keywords": ["bubble", "person", "会話", "トーク"],
-  "textdomain": "litography-blocks",
+  "textdomain": "lito-blocks",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",

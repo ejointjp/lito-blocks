@@ -4,7 +4,7 @@
   "name": "lito/gist",
   "version": "0.1.0",
   "title": "ここがポイント",
-  "category": "litography-blocks",
+  "category": "lito-blocks",
   "icon": "editor-ul",
   "description": "",
   "attributes": {
@@ -26,7 +26,7 @@
     "html": false
   },
   "keywords": ["リスト", "list", "ポイント", "point", "まとめ", "概要", "summary"],
-  "textdomain": "litography-blocks",
+  "textdomain": "lito-blocks",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css"
