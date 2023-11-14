@@ -1,55 +1,55 @@
 const stateColors = [
   {
-    name: 'info',
-    color: '#0ea5e9'
+    name: "info",
+    color: "var(--humib-info)",
   },
   {
-    name: 'success',
-    color: '#22c55e'
+    name: "success",
+    color: "var(--humib-success)",
   },
   {
-    name: 'warning',
-    color: '#eab308'
+    name: "warning",
+    color: "var(--humib-warning)",
   },
   {
-    name: 'danger',
-    color: '#ef4444'
+    name: "danger",
+    color: "var(--humib-danger)",
   },
   {
-    name: 'primary',
-    color: 'var(--su-primary)'
+    name: "primary",
+    color: "var(--humib-primary)",
   },
   {
-    name: 'secondary',
-    color: 'var(--su-secondary)'
-  }
-]
+    name: "secondary",
+    color: "var(--humib-secondary)",
+  },
+];
 
 const dynamicColors = [
   {
-    name: '背景',
-    color: 'var(--su-bg-extra-light)'
+    name: "背景",
+    color: "var(--su-bg-extra-light)",
   },
   {
-    name: '少し濃い背景',
-    color: 'var(--su-bg-light)'
+    name: "少し濃い背景",
+    color: "var(--su-bg-light)",
   },
   {
-    name: '濃いテキスト',
-    color: 'var(--su-text-dark)'
+    name: "濃いテキスト",
+    color: "var(--su-text-dark)",
   },
   {
-    name: 'テキスト',
-    color: 'var(--su-text-base)'
+    name: "テキスト",
+    color: "var(--su-text-base)",
   },
   {
-    name: '薄いテキスト',
-    color: 'var(--su-text-light)'
+    name: "薄いテキスト",
+    color: "var(--su-text-light)",
   },
   {
-    name: 'かなり薄いテキスト',
-    color: 'var(--su-text-extra-light)'
-  }
-]
+    name: "かなり薄いテキスト",
+    color: "var(--su-text-extra-light)",
+  },
+];
 
-export { stateColors, dynamicColors }
+export { stateColors, dynamicColors };

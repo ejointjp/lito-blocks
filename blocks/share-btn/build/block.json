@@ -1,16 +1,48 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "humi-blocks/share-btn",
+  "name": "humi/share-btn",
   "version": "0.1.0",
-  "title": "Share Btn",
+  "title": "Humi シェアボタン",
   "category": "humi-blocks",
-  "icon": "smiley",
-  "description": "Example block scaffolded with Create Block tool.",
+  "icon": "share",
+  "description": "",
+  "attributes": {
+    "twitter": {
+      "type": "boolean",
+      "default": true
+    },
+    "facebook": {
+      "type": "boolean",
+      "default": true
+    },
+    "hatebu": {
+      "type": "boolean",
+      "default": true
+    },
+    "pocket": {
+      "type": "boolean",
+      "default": true
+    },
+    "twitterVia": {
+      "type": "string",
+      "default": ""
+    },
+    "twitterHashTags": {
+      "type": "string",
+      "default": ""
+    }
+  },
   "example": {},
   "supports": {
     "html": false
   },
+  "keywords": [
+    "share",
+    "sns",
+    "socoal",
+    "button"
+  ],
   "textdomain": "humi-blocks",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",

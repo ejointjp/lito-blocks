@@ -1,127 +1,84 @@
-import { icon } from "../../../helpers/icon";
-import { PanelBody, BaseControl, DateTimePicker } from "@wordpress/components";
 import {
-  useBlockProps,
   InspectorControls,
-  InnerBlocks,
+  MediaUpload,
+  PanelColorSettings,
+  PlainText,
+  RichText,
+  useBlockProps,
 } from "@wordpress/block-editor";
+import { Button } from "@wordpress/components";
 
-export default function Edit({ attributes, setAttributes }) {
-  const { startDateTime, endDateTime } = attributes;
-  const blockProps = useBlockProps({ className: "limited-time" });
+export default function edit({ attributes, setAttributes }) {
+  const { avatarID, avatarAlt, avatarURL, avatarBorderColor, avatarName, comment } = attributes;
 
-  const startDateTimePanelClassName =
-    startDateTime || endDateTime
-      ? "su-components-panel__body su-components-panel__body-changed"
-      : "su-components-panel__body";
+  // const modifierClassName = modifier === "" ? "talk" : "talk talk--" + modifier;
+  const blockProps = useBlockProps();
 
-  const formatDate = (dateVal) => {
-    if (dateVal) {
-      const date = new Date(dateVal);
-      return (
-        date.getFullYear() +
-        "-" +
-        ("0" + (date.getMonth() + 1)).slice(-2) +
-        "-" +
-        ("0" + date.getDate()).slice(-2) +
-        " " +
-        ("0" + date.getHours()).slice(-2) +
-        ":" +
-        ("0" + date.getMinutes()).slice(-2)
-      );
-    }
-  };
-
-  const showStartDateTime = () => {
-    if (startDateTime) {
-      return (
-        <span className="limited-time-start">
-          {formatDate(startDateTime)} から
-        </span>
-      );
-    }
-  };
-
-  const showEndDateTime = () => {
-    if (endDateTime) {
-      return (
-        <span className="limited-time-end">{formatDate(endDateTime)} まで</span>
-      );
-    }
-  };
-
-  const showDateTime = () => {
+  const renderAvatar = (obj) => {
     return (
-      <>
-        {showLabel()}
-        {showStartDateTime()}
-        {showEndDateTime()}
-      </>
+      <Button className="image-button" onClick={obj.open} style={{ padding: 0 }}>
+        <img src={avatarURL} alt={avatarAlt} className={`wp-image-${avatarID}`} />
+      </Button>
     );
   };
 
-  const showLabel = () => {
-    if (isInThePeriod()) {
-      return <span className="limited-time-is-show">表示中</span>;
-    } else {
-      return <span className="limited-time-is-hidden">非表示中</span>;
-    }
+  const figureStyles = {
+    borderColor: avatarBorderColor || undefined,
   };
 
-  // 表示期間中かどうか
-  const isInThePeriod = () => {
-    // startDateTimeが設定されていなければ1970-01-01になる
-    const start = new Date(startDateTime);
-    const end = endDateTime === null ? null : new Date(endDateTime);
-    const now = new Date();
+  const onSelectImage = (media) => {
+    const newAvatarURL = media.sizes.thumbnail ? media.sizes.thumbnail.url : media.url;
 
-    // 終了期間が設定されている場合
-    if (end === null) {
-      // 開始日時以降ならtrue
-      return start < now;
-
-      // 終了期間が設定されている場合
-    } else {
-      return start < now && now < end;
-    }
+    setAttributes({
+      avatarURL: newAvatarURL,
+      avatarID: media.id,
+      avatarAlt: media.alt,
+    });
   };
 
   return (
-    <div {...blockProps}>
-      <InspectorControls key="setting">
-        <PanelBody
-          title="表示期限を設定"
-          initialOpen={true}
-          icon={icon}
-          className={startDateTimePanelClassName}
-        >
-          <BaseControl
-            label="表示開始日時"
-            className="su-components-base-control"
-          >
-            <DateTimePicker
-              currentDate={startDateTime}
-              onChange={(value) => setAttributes({ startDateTime: value })}
-              onReset={() => setAttributes({ startDateTime: null })}
-            />
-          </BaseControl>
-          <BaseControl
-            label="表示終了日時"
-            className="su-components-base-control"
-          >
-            <DateTimePicker
-              currentDate={endDateTime}
-              onChange={(value) => setAttributes({ endDateTime: value })}
-              onReset={() => setAttributes({ endDateTime: null })}
-            />
-          </BaseControl>
-        </PanelBody>
+    <>
+      <InspectorControls>
+        <PanelColorSettings
+          title="スタイル設定"
+          initialOpen={false}
+          colorSettings={[
+            {
+              value: avatarBorderColor,
+              onChange: (value) => setAttributes({ avatarBorderColor: value }),
+              label: "アバターの枠線",
+            },
+          ]}
+        />
       </InspectorControls>
 
-      <div className="limited-time-label">{showDateTime()}</div>
-      <div className="limited-time-inner">
-        <InnerBlocks />
+      <div {...blockProps}>
+        <div className="wp-block-humi-talk-inner">
+          <div className="wp-block-humi-talk-avatar">
+            <div className="wp-block-humi-talk-figure" style={figureStyles}>
+              <MediaUpload
+                onSelect={onSelectImage}
+                type="image"
+                value={avatarID}
+                render={renderAvatar}
+              />
+            </div>
+            <div className="wp-block-humi-talk-name">
+              <PlainText
+                value={avatarName}
+                onChange={(value) => setAttributes({ avatarName: value })}
+                placeholder="名前"
+              />
+            </div>
+          </div>
+          <RichText
+            className="wp-block-humi-talk-comment"
+            value={comment}
+            onChange={(value) => setAttributes({ comment: value })}
+            placeholder="会話を入力"
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 }

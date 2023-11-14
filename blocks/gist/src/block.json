@@ -1,28 +1,33 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 3,
-	"name": "humi-blocks/gist",
-	"version": "0.1.0",
-	"title": "Humi ここがポイント",
-	"category": "humi-blocks",
-	"icon": "editor-ul",
-	"description": "Example block scaffolded with Create Block tool.",
-	"example": {},
-	"supports": {
-		"html": false
-	},
-	"keywords": [
-		"リスト",
-		"list",
-		"ポイント",
-		"point",
-		"まとめ",
-		"概要",
-		"summary"
-	],
-
-	"textdomain": "humi-blocks",
-	"editorScript": "file:./index.js",
-	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css"
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "humi/gist",
+  "version": "0.1.0",
+  "title": "Humi ここがポイント",
+  "category": "humi-blocks",
+  "icon": "editor-ul",
+  "description": "",
+  "attributes": {
+    "iconName": {
+      "type": "string",
+      "default": "check"
+    },
+    "color": {
+      "type": "string",
+      "default": "#0ea5e9"
+    },
+    "label": {
+      "type": "string",
+      "default": "ここがポイント"
+    }
+  },
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "keywords": ["リスト", "list", "ポイント", "point", "まとめ", "概要", "summary"],
+  "textdomain": "humi-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
 }

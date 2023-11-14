@@ -1,12 +1,45 @@
-/**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
- */
+.wp-block-humi-alert {
+  --humib-color: initial;
+  container-type: inline-size;
 
-.wp-block-create-block-alert {
-	background-color: #21759b;
-	color: #fff;
-	padding: 2px;
+  &.is-style-info {
+    --humib-color: var(--wp--custom--color--info, #0ea5e9);
+  }
+  &.is-style-success {
+    --humib-color: var(--wp--custom--color--success, #22c55e);
+  }
+  &.is-style-warning {
+    --humib-color: var(--wp--custom--color--warning, #f59e0b);
+  }
+  &.is-style-danger {
+    --humib-color: var(--wp--custom--color--danger, #ef4444);
+  }
+}
+
+.wp-block-humi-alert-inner {
+  display: grid;
+  gap: 1rem;
+  min-height: 4rem;
+  padding: var(--humib-box-padding);
+  border-radius: var(--humib-box-radius);
+  border-left: 0.25rem solid var(--humib-color);
+  background-color: var(--humib-bg-base);
+
+  :where(.is-style-info, .is-style-success, .is-style-warning, .is-style-danger) > & {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  & > .humib-icon {
+    color: var(--humib-color);
+    width: 1.5rem;
+    transform: translateY(0.25rem);
+  }
+}
+
+@container (768px <= width) {
+  .wp-block-humi-alert-inner {
+    gap: 0.75rem;
+    grid-template-columns: auto 1fr;
+  }
 }

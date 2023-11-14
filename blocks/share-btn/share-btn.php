@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name:       Share Btn
+ * Plugin Name:       Humi Blocks - Share Btn
  * Description:       Example block scaffolded with Create Block tool.
  * Requires at least: 6.1
  * Requires PHP:      7.0
@@ -9,7 +9,7 @@
  * Author:            The WordPress Contributors
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       share-btn
+ * Text Domain:       humi-blocks
  *
  * @package           humi-blocks
  */
@@ -21,14 +21,11 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function create_block_share_btn_block_init()
-{
+function humib_share_button_init() {
 	register_block_type(
 		__DIR__ . '/build',
 		[
-			// 'editor_script' => 'su-block-share-btn-editor',
-			// 'style' => 'su-block-share-btn-style',
-			'render_callback' => 'humi_share_button_render', // レンダリングする関数名を指定
+			'render_callback' => 'humib_share_button_render_callback', // レンダリングする関数名を指定
 
 			//属性を設定（連想配列で指定）
 			'attributes' => [
@@ -60,11 +57,10 @@ function create_block_share_btn_block_init()
 		]
 	);
 }
-add_action('init', 'create_block_share_btn_block_init');
+add_action('init', 'humib_share_button_init');
 
-function humi_share_button_render($block_attributes, $content)
-{
-	$html = '<div class="wp-block-su-share-btn share-btn">';
+function humib_share_button_render_callback($block_attributes, $content) {
+	$html = '<div class="wp-block-humi-share-btn">';
 
 	// Twitter
 	if ($block_attributes['twitter']) :
@@ -79,11 +75,11 @@ function humi_share_button_render($block_attributes, $content)
 		ob_start();
 
 ?>
-		<a class="share-btn-item" href="<?php echo esc_url($share_url); ?>" target="_blank" rel="nofollow noopener noreferrer">
-			<span class="icon-md">
-				<?php include get_theme_file_path('components/icon/twitter.svg'); ?>
+		<a class="wp-block-humi-share-btn-item" href="<?php echo esc_url($share_url); ?>" target="_blank" rel="nofollow noopener noreferrer">
+			<span class="wp-block-humi-share-btn-icon">
+				<?php include plugin_dir_path(__FILE__) . '../../svg/x.svg'; ?>
 			</span>
-			<span class="share-btn-label">ツイート</span>
+			<span class="wp-block-humi-share-btn-label">ポスト</span>
 		</a>
 	<?php
 		$html .= ob_get_clean();
@@ -94,13 +90,13 @@ function humi_share_button_render($block_attributes, $content)
 		$share_url = "https://www.facebook.com/sharer/sharer.php?u=" .  get_permalink(get_the_ID());
 		ob_start();
 	?>
-		<a class="share-btn-item" href="<?php echo esc_url($share_url); ?>" target="_blank" rel="nofollow noopener noreferrer">
+		<a class="wp-block-humi-share-btn-item" href="<?php echo esc_url($share_url); ?>" target="_blank" rel="nofollow noopener noreferrer">
 			<?php //get_template_part('components/icon/facebook');
 			?>
-			<span class="icon-md">
-				<?php include get_theme_file_path('components/icon/facebook.svg'); ?>
+			<span class="wp-block-humi-share-btn-icon">
+				<?php include plugin_dir_path(__FILE__) . '../../svg/facebook.svg'; ?>
 			</span>
-			<span class="share-btn-label">シェア</span>
+			<span class="wp-block-humi-share-btn-label">シェア</span>
 		</a>
 	<?php
 		$html .= ob_get_clean();
@@ -116,11 +112,11 @@ function humi_share_button_render($block_attributes, $content)
 		$share_url = add_query_arg($args, $base_url);
 		ob_start();
 	?>
-		<a class="share-btn-item" href="<?php echo esc_url($share_url); ?>" target="_blank" rel="nofollow noopener noreferrer">
-			<span class="icon-md">
-				<?php include get_theme_file_path('components/icon/hatebu.svg'); ?>
+		<a class="wp-block-humi-share-btn-item" href="<?php echo esc_url($share_url); ?>" target="_blank" rel="nofollow noopener noreferrer">
+			<span class="wp-block-humi-share-btn-icon">
+				<?php include plugin_dir_path(__FILE__) . '../../svg/hatebu.svg'; ?>
 			</span>
-			<span class="share-btn-label">ブックマーク</span>
+			<span class="wp-block-humi-share-btn-label">ブックマーク</span>
 		</a>
 	<?php
 		$html .= ob_get_clean();
@@ -131,11 +127,11 @@ function humi_share_button_render($block_attributes, $content)
 		ob_start();
 		$share_url = "https://getpocket.com/save?url=" .  get_permalink(get_the_ID());
 	?>
-		<a class="share-btn-item" href="<?php echo esc_url($share_url); ?>" target="_blank" rel="nofollow noopener noreferrer">
-			<span class="icon-md">
-				<?php include get_theme_file_path('components/icon/pocket.svg'); ?>
+		<a class="wp-block-humi-share-btn-item" href="<?php echo esc_url($share_url); ?>" target="_blank" rel="nofollow noopener noreferrer">
+			<span class="wp-block-humi-share-btn-icon">
+				<?php include plugin_dir_path(__FILE__) . '../../svg/pocket.svg'; ?>
 			</span>
-			<span class="share-btn-label">Pocket</span>
+			<span class="wp-block-humi-share-btn-label">Pocket</span>
 		</a>
 <?php
 		$html .= ob_get_clean();

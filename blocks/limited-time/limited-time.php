@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name:       Limited Time
+ * Plugin Name:       Humi Blocks - Limited Time
  * Description:       Example block scaffolded with Create Block tool.
  * Requires at least: 6.1
  * Requires PHP:      7.0
@@ -21,15 +21,13 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function create_block_limited_time_block_init()
-{
+function humib_limited_time_init() {
 	register_block_type(__DIR__ . '/build');
 }
-add_action('init', 'create_block_limited_time_block_init');
+add_action('init', 'humib_limited_time_init');
 
 // DateTime設定に応じて非表示にする
-function humi_date_time($content, $block)
-{
+function humi_date_time($content, $block) {
 	// Dates entered in the block editor are localized.
 	$attributes      = $block['attrs'];
 	$start_date_time = isset($attributes['startDateTime']) ? $attributes['startDateTime'] : false;

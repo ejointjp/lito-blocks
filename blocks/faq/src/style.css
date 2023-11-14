@@ -1,0 +1,49 @@
+/* .wp-block-humi-faq-item {
+  & + & {
+    margin-top: 2rem;
+  }
+} */
+
+.wp-block-humi-faq-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.wp-block-humi-faq-a {
+  margin-top: 1rem;
+}
+
+.wp-block-humi-faq-label {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  font-size: var(--humib-font-size-sm);
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  border-radius: 9999px;
+}
+
+.wp-block-humi-faq-q {
+  & > .wp-block-humi-faq-label {
+    color: white;
+    background-color: var(--humib-primary);
+  }
+
+  & > p {
+    margin: 0;
+    flex-grow: 1;
+  }
+}
+
+.wp-block-humi-faq-a {
+  & .wp-block-humi-faq-label {
+    background-color: var(--humib-bg-base);
+  }
+}
+
+.wp-block-humi-faq-content-q {
+}

@@ -1,65 +1,56 @@
+import icons from "../../../helpers/material-symbols";
 import { icon } from "../../../helpers/icon";
-
-import { ServerSideRender } from "@wordpress/editor";
-import {
-  PanelBody,
-  BaseControl,
-  TextControl,
-  CheckboxControl,
-} from "@wordpress/components";
-import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
+import { InnerBlocks, useBlockProps, InspectorControls } from "@wordpress/block-editor";
+import { PanelBody, BaseControl } from "@wordpress/components";
 
 export default function edit({ attributes, setAttributes }) {
-  const blockProps = useBlockProps({ className: "share-btn" });
-  const { twitter, facebook, hatebu, pocket, twitterVia, twitterHashTags } =
-    attributes;
+  const { iconName } = attributes;
+  const blockProps = useBlockProps();
+
+  const onClickIconButton = (icon) => {
+    setAttributes({
+      iconName: icon.value,
+    });
+  };
 
   return (
-    <div {...blockProps}>
-      <InspectorControls key="setting">
-        <PanelBody title="表示するシェアボタン" initialOpen={true} icon={icon}>
-          <BaseControl className="su-components-base-control">
-            <CheckboxControl
-              label="Twitter"
-              checked={twitter}
-              onChange={(value) => setAttributes({ twitter: value })}
-            />
+    <>
+      <InspectorControls>
+        <PanelBody title="アイコン" icon={icon} initialOpen={true}>
+          <BaseControl label="アラートアイコンを選択" id="humi/alert/icon">
+            <div className="humib-editor-icon">
+              {icons.map((icon, i) => {
+                const isCurrent = icon.value === iconName;
 
-            <CheckboxControl
-              label="Facebook"
-              checked={facebook}
-              onChange={(value) => setAttributes({ facebook: value })}
-            />
-
-            <CheckboxControl
-              label="はてなブックマーク"
-              checked={hatebu}
-              onChange={(value) => setAttributes({ hatebu: value })}
-            />
-
-            <CheckboxControl
-              label="Pocket"
-              checked={pocket}
-              onChange={(value) => setAttributes({ pocket: value })}
-            />
-
-            <TextControl
-              label="Twitter via (@は不要）"
-              value={twitterVia}
-              onChange={(value) => setAttributes({ twitterVia: value })}
-              helper="helper"
-            />
-
-            <TextControl
-              label="Twitter ハッシュタグ（カンマ区切り、カンマの後の空白"
-              value={twitterHashTags}
-              onChange={(value) => setAttributes({ twitterHashTags: value })}
-            />
+                return (
+                  <div
+                    key={i}
+                    className={`humib-editor-icon-item ${isCurrent ? "current" : ""}`}
+                    onClick={() => onClickIconButton(icon)}
+                  >
+                    {icon.value !== "" ? (
+                      <span className="material-symbols-outlined">{icon.value}</span>
+                    ) : (
+                      <div className="humib-editor-icon-item-blank">なし</div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </BaseControl>
         </PanelBody>
       </InspectorControls>
 
-      <ServerSideRender block="humi-blocks/share-btn" attributes={attributes} />
-    </div>
+      <div {...blockProps}>
+        <div className="wp-block-humi-alert-inner">
+          {iconName !== "" && (
+            <span className="material-symbols-outlined humib-icon">{iconName}</span>
+          )}
+          <div className="humib-inner-blocks">
+            <InnerBlocks />
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

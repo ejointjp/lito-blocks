@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "humi/faq",
+  "version": "0.1.0",
+  "title": "Humi Faq",
+  "icon": "admin-comments",
+  "category": "humi-blocks",
+  "keywords": ["faq", "qanda", "よくある質問"],
+  "attributes": {
+    "question": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "example": {},
+  "supports": {
+    "html": false,
+    "anchor": true
+  },
+  "textdomain": "humi-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

@@ -1,12 +1,26 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "humi-blocks/gist",
+  "name": "humi/gist",
   "version": "0.1.0",
   "title": "Humi ここがポイント",
   "category": "humi-blocks",
   "icon": "editor-ul",
-  "description": "Example block scaffolded with Create Block tool.",
+  "description": "",
+  "attributes": {
+    "iconName": {
+      "type": "string",
+      "default": "check"
+    },
+    "color": {
+      "type": "string",
+      "default": "#0ea5e9"
+    },
+    "label": {
+      "type": "string",
+      "default": "ここがポイント"
+    }
+  },
   "example": {},
   "supports": {
     "html": false

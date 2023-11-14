@@ -1,33 +1,35 @@
-.toc {
-  width: 100%;
-  padding-top: 1.5rem;
-  background-color: var(--su-bg-extra-light);
+.wp-block-humi-toc {
+  padding: 1.5rem;
+  border-radius: var(--humib-box-radius);
+  background-color: var(--humib-bg-base);
 
   &:empty {
     display: none;
   }
 }
 
-.toc-title {
+.wp-block-humi-toc-title {
   display: inline-block;
   padding-bottom: 0.25rem;
-  margin-bottom: 0.5rem;
-  font-size: var(--su-font-size-base);
-  font-weight: bold;
-  border-bottom: 2px solid var(--su-border-light);
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
-.toc-list {
+.wp-block-humi-toc-list {
   display: block;
-  font-size: var(--su-font-size-sm);
+  font-size: var(--humib-font-size-sm);
   list-style-position: inside;
+  padding-left: 0;
+  margin: 0;
 
   & > * + * {
-    border-top: 1px dashed var(--su-border-light);
+    border-top: 1px dashed white;
   }
 }
 
-.toc-item {
+.wp-block-humi-toc-item {
   margin-left: 0 !important;
   font-size: var(--su-font-size-xs);
   list-style: none !important;
@@ -37,41 +39,41 @@
   }
 }
 
-.toc-a {
+.wp-block-humi-toc-a {
   display: flex;
   align-items: center;
   padding: 0.5rem 0;
   color: inherit;
+  transition: 0.2s;
 
   &:hover {
-    color: var(--su-primary);
     text-decoration: none;
   }
 }
 
-.toc-a > .toc-number {
+.wp-block-humi-toc-a > .wp-block-humi-toc-number {
   flex-shrink: 0;
   color: var(--su-text-light);
   text-align: center;
 }
 
-.toc-number {
+.wp-block-humi-toc-number {
   flex-shrink: 0;
   margin-right: 0.5rem;
 }
 
-.toc-a-h2 {
+.wp-block-humi-toc-h2 {
   font-weight: 600;
 }
 
-.toc-a-h2 > .toc-number {
+.wp-block-humi-toc-h2 > .wp-block-humi-toc-number {
   min-width: 1.25rem;
 }
 
-.toc-a-h3 {
+.wp-block-humi-toc-h3 {
   margin-left: 1.5rem;
 }
 
-.toc-a-h3 > .toc-number {
+.wp-block-humi-toc-h3 > .wp-block-humi-toc-number {
   min-width: 2rem;
 }

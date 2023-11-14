@@ -1,0 +1,42 @@
+.humib-editor-icon {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.humib-editor-icon-item {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  place-items: center;
+  border-radius: 0.25rem;
+}
+
+.humib-editor-icon-item:hover {
+  color: var(--wp--preset--color--primary, --humib-primary);
+}
+
+.humib-editor-icon-item.current {
+  background-color: var(--wp--preset--color--bg-base, var(--humib-bg-base));
+}
+
+.humib-inner-blocks .block-editor-block-list__layout > * {
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+/* Datetimeコンポーネントのスタイル修正 */
+.humib-components-panel-body .components-base-control,
+.humib-components-panel-body .components-base-control:last-child {
+  margin-bottom: 0;
+}
+
+.humib-components-panel-body .components-datetime__date .components-heading {
+  margin-bottom: 0;
+  font-size: 0.6875rem !important;
+}
+
+.humi-limited-time-panel-body .humib-components-button {
+  margin-top: 1rem;
+}

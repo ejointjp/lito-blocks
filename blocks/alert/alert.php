@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name:       Alert
+ * Plugin Name:       Humi Blocks - Alert
  * Description:       Example block scaffolded with Create Block tool.
  * Requires at least: 6.1
  * Requires PHP:      7.0
@@ -21,8 +21,7 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function create_block_alert_block_init()
-{
+function humib_alert_init() {
 	register_block_type(__DIR__ . '/build');
 }
-add_action('init', 'create_block_alert_block_init');
+add_action('init', 'humib_alert_init');

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Plugin Name:       Gist
+ * Plugin Name:       Humi Blocks - Gist
  * Description:       Example block scaffolded with Create Block tool.
  * Requires at least: 6.1
  * Requires PHP:      7.0
@@ -8,9 +9,9 @@
  * Author:            The WordPress Contributors
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       gist
+ * Text Domain:       humi-blocks
  *
- * @package           create-block
+ * @package           humi-blocks
  */
 
 /**
@@ -20,7 +21,7 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function create_block_gist_block_init() {
-	register_block_type( __DIR__ . '/build' );
+function humib_gist_init() {
+	register_block_type(__DIR__ . '/build');
 }
-add_action( 'init', 'create_block_gist_block_init' );
+add_action('init', 'humib_gist_init');

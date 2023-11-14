@@ -1,16 +1,41 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "humi-blocks/alert",
+  "name": "humi/alert",
   "version": "0.1.0",
   "title": "Humi アラート",
   "category": "humi-blocks",
   "icon": "info",
   "description": "アイコンつきのアラート文を作成できます",
   "example": {},
-  "supports": {
-    "html": false
+  "attributes": {
+    "iconName": {
+      "type": "string",
+      "default": "info"
+    }
   },
+  "supports": {
+    "html": true,
+    "defaultStylePicker": true
+  },
+  "styles": [
+    {
+      "name": "info",
+      "label": "Info"
+    },
+    {
+      "name": "success",
+      "label": "Success"
+    },
+    {
+      "name": "warning",
+      "label": "Warning"
+    },
+    {
+      "name": "danger",
+      "label": "Danger"
+    }
+  ],
   "keywords": [
     "コメント",
     "注意",

@@ -1,15 +1,16 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "humi-blocks/toc",
+  "name": "humi/toc",
   "version": "0.1.0",
   "title": "Humi 目次",
-  "category": "widgets",
+  "category": "humi-blocks",
   "icon": "list-view",
   "description": "",
   "example": {},
   "supports": {
-    "html": false
+    "html": false,
+    "align": true
   },
   "keywords": [
     "目次",

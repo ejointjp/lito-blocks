@@ -1,35 +1,30 @@
-.gist {
+.wp-block-humi-gist {
   position: relative;
   padding-top: 1rem;
 
-  & .marker-text-icon {
-    color: var(--su-marker-color, var(--gist-color, '#4b5563'));
+  & .wp-block-humi-marker-text .humib-icon {
+    color: var(--humib-marker-text-color, var(--humib-gist-color, var(--wp--custom--color--info)));
   }
-}
 
-.gist-label {
-  position: absolute;
-  top: 0;
-  left: 1rem;
-  padding: 0.5rem 1rem;
-  font-size: var(--su-font-size-sm);
-  line-height: 1.5;
-  color: white;
-  background-color: var(--gist-color);
-  border-radius: 9999px;
-
-  & + .gist-list {
+  & .humib-inner-blocks {
+    background-color: var(--humib-bg-base);
+    border-radius: var(--humib-box-radius);
+    padding: var(--humib-box-padding);
     padding-top: 2rem;
   }
 }
 
-.gist-list {
-  line-height: 1.5;
-  list-style: none;
-  background-color: var(--su-bg-extra-light);
-  border-radius: 0.625rem;
+.wp-block-humi-gist-label {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  padding: 0.375rem 1rem;
+  font-size: var(--wp--preset--font-size--small, var(--humib-font-size-sm));
+  color: white;
+  background-color: var(--humib-gist-color, var(--wp--custom--color--info));
+  border-radius: 999px;
 
-  & .marker-text + .marker-text {
-    margin-top: 0.5rem;
+  & + .gist-list {
+    padding-top: 2rem;
   }
 }

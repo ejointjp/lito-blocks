@@ -1,18 +1,17 @@
 import { useBlockProps, InnerBlocks } from "@wordpress/block-editor";
 
 export default function save({ attributes }) {
-	const { markerColor, label } = attributes;
-	const blockProps = useBlockProps.save({
-		className: "gist",
-		style: { "--gist-color": markerColor },
-	});
+  const { color, label } = attributes;
+  const blockProps = useBlockProps.save({
+    style: { "--humib-gist-color": color },
+  });
 
-	return (
-		<div {...blockProps}>
-			{label && <div className="gist-label">{label}</div>}
-			<div className="gist-list">
-				<InnerBlocks.Content />
-			</div>
-		</div>
-	);
+  return (
+    <div {...blockProps}>
+      {label && <div className="wp-block-humi-gist-label">{label}</div>}
+      <div className="humib-inner-blocks">
+        <InnerBlocks.Content />
+      </div>
+    </div>
+  );
 }

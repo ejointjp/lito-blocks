@@ -1,9 +1,31 @@
-/**
- * The following styles get applied inside the editor only.
- *
- * Replace them with your own styles or remove the file completely.
- */
+.wp-block-humi-limited-time {
+}
 
-.wp-block-create-block-limited-time {
-	border: 1px dotted #f00;
+.limited-time-metadata {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.limited-time-label {
+  background-color: var(--humib-bg-base);
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: var(--humib-font-size-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  & > .material-symbols-outlined {
+    font-size: 1.25rem;
+  }
+}
+
+.limited-time-date {
+  font-size: var(--humib-font-size-sm);
+}
+
+.wp-block-humi-limited-time:has(.limited-time-is-hidden):not(.is-selected, .has-child-selected) {
+  opacity: 0.4;
 }

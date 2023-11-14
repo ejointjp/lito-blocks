@@ -1,23 +1,61 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "humi-block/talk",
+  "name": "humi/talk",
   "version": "0.1.0",
-  "title": "Humi シェアボタン",
+  "title": "Humi 吹き出し",
   "category": "humi-blocks",
-  "icon": "share",
-  "description": "SNSへのシェアボタン",
+  "icon": "businessperson",
+  "description": "アイコン付きの吹き出し",
   "example": {},
   "supports": {
     "html": false
   },
   "keywords": [
-    "share",
-    "sns",
-    "button"
+    "bubble",
+    "person",
+    "会話",
+    "トーク"
   ],
   "textdomain": "humi-blocks",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
-  "style": "file:./style-index.css"
+  "style": "file:./style-index.css",
+  "attributes": {
+    "avatarID": {
+      "type": "number",
+      "default": 0
+    },
+    "avatarURL": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "img",
+      "attribute": "src",
+      "default": "https://0.gravatar.com/avatar/00000000000000000000000000000000?s=128&d=mp&r=g"
+    },
+    "avatarAlt": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "img",
+      "attribute": "alt",
+      "default": ""
+    },
+    "avatarBorderColor": {
+      "type": "string"
+    },
+    "avatarName": {
+      "type": "string",
+      "default": ""
+    },
+    "comment": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "styles": [
+    {
+      "name": "right",
+      "label": "吹き出し右"
+    }
+  ]
 }

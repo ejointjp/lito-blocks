@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name:       Marker Text
+ * Plugin Name:       Humi-blocks - Marker Text
  * Description:       Example block scaffolded with Create Block tool.
  * Requires at least: 6.1
  * Requires PHP:      7.0
@@ -11,7 +11,7 @@
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       humi-blocks
  *
- * @package           humi-block
+ * @package           humi-blocks
  */
 
 /**
@@ -21,8 +21,7 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function create_block_marker_text_block_init()
-{
+function humi_block_marker_text_init() {
 	register_block_type(__DIR__ . '/build');
 }
-add_action('init', 'create_block_marker_text_block_init');
+add_action('init', 'humi_block_marker_text_init');

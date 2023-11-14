@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name:       Toc
+ * Plugin Name:       Humi Blocks - Toc
  * Description:       Example block scaffolded with Create Block tool.
  * Requires at least: 6.1
  * Requires PHP:      7.0
@@ -21,37 +21,30 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function create_block_toc_block_init()
-{
+function create_block_toc_block_init() {
 	register_block_type(
 		__DIR__ . '/build',
 		[
-			// 'editor_script' => 'su-block-toc-editor',
-			// 'style' => 'su-block-toc-style',
 			'render_callback' => 'humi_toc_render_callback',
-
-			'api_version' => 2,
-			'attributes' => [
-				'postCount' => [
-					'type' => 'number',
-					'default' => 10 // デフォルトの投稿数
-				]
-			]
+			// 'attributes' => [
+			// 	'postCount' => [
+			// 		'type' => 'number',
+			// 		'default' => 10 // デフォルトの投稿数
+			// 	]
+			// ]
 		]
 	);
 }
 add_action('init', 'create_block_toc_block_init');
 
 
-function humi_toc_render_callback($attributes)
-{
-	return '<div class="toc"></div>';
+function humi_toc_render_callback($attributes) {
+	return '<div class="wp-block-humi-toc"></div>';
 }
 
 // scriptタグにdeferを付与
-function humi_add_defer_attribute($tag, $handle)
-{
-	if ('humi-blocks-toc-view-script' === $handle) {
+function humi_add_defer_attribute($tag, $handle) {
+	if ('humi-toc-view-script' === $handle) {
 		return str_replace(' src', ' defer="defer" src', $tag);
 	}
 	return $tag;

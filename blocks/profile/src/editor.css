@@ -1,0 +1,25 @@
+/* プロフィール */
+
+.wp-block-humi-profile-avatar {
+  & button {
+    display: grid;
+    height: 100%;
+  }
+}
+
+.wp-block-humi-profile-name,
+.wp-block-humi-profile-title {
+  margin-top: 0;
+
+  & > textarea {
+    display: inline-block;
+    padding: 0.125rem;
+    background-color: transparent;
+  }
+}
+
+.wp-block-humi-profile-description {
+  & * + * {
+    margin-top: 0.75rem !important;
+  }
+}

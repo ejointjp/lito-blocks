@@ -1,1 +1,1 @@
-.marker-text{display:flex;line-height:var(--su-line-height-leading,2)}.marker-text-content{flex-grow:1}.marker-text-icon{color:var(--su-marker-color);margin-right:.75rem;transform:translateY(.25rem)}
+.wp-block-humi-marker-text{display:grid;gap:.75rem;grid-template-columns:auto 1fr;& .humib-icon{color:var(--humib-marker-text-color,var(--wp--custom--color--info));transform:translateY(.3125rem)}}

@@ -1,1 +1,1 @@
-.talk-figure .image-button{display:block}.talk-name .block-editor-plain-text{border:1px solid var(--su-border-extra-light);padding:.25rem;width:auto}.talk--reverse .talk-name .block-editor-plain-text{text-align:right}
+.wp-block-humi-talk-figure .image-button{display:block!important}.wp-block-humi-talk-name .block-editor-plain-text{padding:.25rem}.wp-block-humi-talk.is-style-right .wp-block-humi-talk-name .block-editor-plain-text{text-align:end}@container (768px <= width){.wp-block-humi-talk-name .block-editor-plain-text{text-align:center!important}}

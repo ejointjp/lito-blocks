@@ -1,26 +1,20 @@
 import { icon } from "../../../helpers/icon";
 
-import { ServerSideRender } from "@wordpress/editor";
-import {
-  PanelBody,
-  BaseControl,
-  TextControl,
-  CheckboxControl,
-} from "@wordpress/components";
+import ServerSideRender from "@wordpress/server-side-render";
+import { PanelBody, BaseControl, TextControl, CheckboxControl } from "@wordpress/components";
 import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
 
 export default function edit({ attributes, setAttributes }) {
   const blockProps = useBlockProps({ className: "share-btn" });
-  const { twitter, facebook, hatebu, pocket, twitterVia, twitterHashTags } =
-    attributes;
+  const { twitter, facebook, hatebu, pocket, twitterVia, twitterHashTags } = attributes;
 
   return (
     <div {...blockProps}>
       <InspectorControls key="setting">
         <PanelBody title="表示するシェアボタン" initialOpen={true} icon={icon}>
-          <BaseControl className="su-components-base-control">
+          <BaseControl className="humib-base-control">
             <CheckboxControl
-              label="Twitter"
+              label="X (Twitter)"
               checked={twitter}
               onChange={(value) => setAttributes({ twitter: value })}
             />
@@ -59,7 +53,7 @@ export default function edit({ attributes, setAttributes }) {
         </PanelBody>
       </InspectorControls>
 
-      <ServerSideRender block="humi-blocks/share-btn" attributes={attributes} />
+      <ServerSideRender block="humi/share-btn" attributes={attributes} />
     </div>
   );
 }

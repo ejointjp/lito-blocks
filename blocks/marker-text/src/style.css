@@ -1,15 +1,11 @@
 /* マーカーテキスト */
-.marker-text {
-	display: flex;
-	line-height: var(--su-line-height-leading, 2);
-}
+.wp-block-humi-marker-text {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
 
-.marker-text-content {
-	flex-grow: 1;
-}
-
-.marker-text-icon {
-	margin-right: 0.75rem;
-	color: var(--su-marker-color);
-	transform: translateY(0.25rem);
+  & .humib-icon {
+    color: var(--humib-marker-text-color, var(--wp--custom--color--info));
+    transform: translateY(0.3125rem);
+  }
 }
