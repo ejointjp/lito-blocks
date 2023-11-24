@@ -1,22 +1,22 @@
-import { icon } from "../../../helpers/icon";
-import materialIcons from "../../../helpers/material-symbols";
-import { stateColors } from "../../../helpers/colors";
+import { icon } from '../../../helpers/icon';
+import materialIcons from '../../../helpers/material-symbols';
+import { stateColors } from '../../../helpers/colors';
 
-import { createBlock } from "@wordpress/blocks";
-import { useBlockProps, InnerBlocks, InspectorControls, RichText } from "@wordpress/block-editor";
-import { PanelBody, BaseControl, ColorPalette } from "@wordpress/components";
-import { select, dispatch } from "@wordpress/data";
+import { createBlock } from '@wordpress/blocks';
+import { useBlockProps, InnerBlocks, InspectorControls, RichText } from '@wordpress/block-editor';
+import { PanelBody, BaseControl, ColorPalette } from '@wordpress/components';
+import { select, dispatch } from '@wordpress/data';
 
 export default function edit({ attributes, setAttributes, clientId }) {
   const { iconName, color, label } = attributes;
   const blockProps = useBlockProps({
-    style: { "--litob-gist-color": color },
+    style: { '--lito-gist-color': color },
   });
-  const allowedBlocks = ["lito/marker-text"];
-  const template = [["lito/marker-text"]];
+  const allowedBlocks = ['lito/marker-text'];
+  const template = [['lito/marker-text']];
 
   const onClickIconButton = (icon) => {
-    if (icon.value === "") {
+    if (icon.value === '') {
       setAttributes({ iconName: undefined });
     } else {
       setAttributes({ iconName: icon.value });
@@ -30,21 +30,21 @@ export default function edit({ attributes, setAttributes, clientId }) {
   // innerBlock要素のattributesを変更
   const changeChildrenValue = (litob_alert_) => {
     // innerBlocksの要素をすべて取得
-    const children = select("core/block-editor").getBlocksByClientId(clientId)[0].innerBlocks;
+    const children = select('core/block-editor').getBlocksByClientId(clientId)[0].innerBlocks;
     children.forEach((child) => {
-      dispatch("core/block-editor").updateBlockAttributes(child.clientId, litob_alert_);
+      dispatch('core/block-editor').updateBlockAttributes(child.clientId, litob_alert_);
     });
   };
 
   // innerBlockを追加する
   const addInnerBlock = () => {
-    let children = select("core/block-editor").getBlocksByClientId(clientId)[0].innerBlocks;
+    let children = select('core/block-editor').getBlocksByClientId(clientId)[0].innerBlocks;
     const lastChild = children.pop();
     const { iconName, color } = lastChild.attributes;
 
-    dispatch("core/block-editor").insertBlocks(createBlock("lito/marker-text"), 9999, clientId);
+    dispatch('core/block-editor').insertBlocks(createBlock('lito/marker-text'), 9999, clientId);
 
-    children = select("core/block-editor").getBlocksByClientId(clientId)[0].innerBlocks;
+    children = select('core/block-editor').getBlocksByClientId(clientId)[0].innerBlocks;
     const newChild = children.pop();
 
     newChild.attributes.iconName = iconName;
@@ -67,12 +67,12 @@ export default function edit({ attributes, setAttributes, clientId }) {
                     key={i}
                     className={
                       icon.value === iconName
-                        ? "litob-editor-icon-item current"
-                        : "litob-editor-icon-item"
+                        ? 'litob-editor-icon-item current'
+                        : 'litob-editor-icon-item'
                     }
                     onClick={() => onClickIconButton(icon)}
                   >
-                    {icon.value !== "" ? (
+                    {icon.value !== '' ? (
                       <span className={icon.className}>{icon.value}</span>
                     ) : (
                       <div className="litob-editor-icon-item-blank">なし</div>

@@ -5,7 +5,7 @@
   gap: 0.75rem;
 
   & .litob-icon {
-    color: var(--litob-marker-text-color, var(--wp--custom--color--info));
+    color: var(--lito-marker-text-color, var(--wp--custom--color--info));
     transform: translateY(0.3125rem);
   }
 }

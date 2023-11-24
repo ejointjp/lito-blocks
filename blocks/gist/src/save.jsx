@@ -1,9 +1,9 @@
-import { useBlockProps, InnerBlocks } from "@wordpress/block-editor";
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
   const { color, label } = attributes;
   const blockProps = useBlockProps.save({
-    style: { "--litob-gist-color": color },
+    style: { '--lito-gist-color': color },
   });
 
   return (

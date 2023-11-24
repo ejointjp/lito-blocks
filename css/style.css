@@ -1,21 +1,3 @@
-body {
-  --litob-bg-base: var(--wp--preset--color--bg-base, #f1f1f5);
-  --litob-font-size-base: var(--wp--preset--color--text-base, #222226);
-  --litob-font-size-light: var(--wp--preset--color--text-light, #77777d);
-  --litob-font-size-extra-light: var(--wp--preset--color--text-extra-light, #ccccd2);
-  --litob-font-size-sm: 0.875rem;
-  --litob-font-size-xs: 0.75rem;
-  --litob-border-base: #e4e4e8;
-  --litob-box-radius: 0.5rem;
-  --litob-box-padding: 1rem;
-  --litob-primary: #fe4a49;
-  --litob-secondary: #009fb7;
-  --litob-info: var(--wp--custom--color--info, #0ea5e9);
-  --litob-success: var(--wp--custom--color--sucess, #22c55e);
-  --litob-warning: var(--wp--custom--color--warning, #f59e0b);
-  --litob-danger: var(--wp--custom--color--danger, #ef4444);
-}
-
 .litob-inner-blocks {
   display: grid;
   gap: 1rem;
@@ -25,11 +7,10 @@ body {
   }
 }
 
-.components-button.block-editor-block-types-list__item[class*="editor-block-list-item-lito-"]
-  .dashicon {
-  color: var(--litob-primary);
+.components-button.block-editor-block-types-list__item[class*="editor-block-list-item-lito-"] .dashicon {
+  color: var(--lito-primary);
 }
 
 [id*="-lito/"] .dashicon {
-  color: var(--litob-primary);
+  color: var(--lito-primary);
 }

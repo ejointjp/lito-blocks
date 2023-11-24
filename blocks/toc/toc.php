@@ -22,8 +22,8 @@
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function litob_toc_init() {
-  register_block_type(__DIR__ . "/build", [
-    "render_callback" => "litob_toc_render_callback",
+  register_block_type(__DIR__ . '/build', [
+    'render_callback' => 'litob_toc_render_callback',
     // 'attributes' => [
     // 	'postCount' => [
     // 		'type' => 'number',
@@ -32,17 +32,27 @@ function litob_toc_init() {
     // ]
   ]);
 }
-add_action("init", "litob_toc_init");
+add_action('init', 'litob_toc_init');
 
-function litob_toc_render_callback($attributes) {
-  return '<div class="wp-block-lito-toc"></div>';
+function litob_toc_render_callback($attributes, $content) {
+  // ブロックの属性からスタイルを取得
+  $font_size = '';
+  if (isset($attributes['fontSize'])) {
+    $font_size = 'var(--wp--preset--font-size--' . $attributes['fontSize'] . ')';
+  } elseif (isset($attributes['style']['typography']['fontSize'])) {
+    $font_size = $attributes['style']['typography']['fontSize'];
+  }
+
+  // スタイルをブロックのHTMLに適用
+  $style = $font_size ? ' style="font-size: ' . esc_attr($font_size) . '"' : '';
+  return '<div class="wp-block-lito-toc"' . $style . '></div>';
 }
 
 // scriptタグにdeferを付与
 function litob_add_defer_attribute($tag, $handle) {
-  if ("lito-toc-view-script" === $handle) {
-    return str_replace(" src", ' defer="defer" src', $tag);
+  if ('lito-toc-view-script' === $handle) {
+    return str_replace(' src', ' defer="defer" src', $tag);
   }
   return $tag;
 }
-add_filter("script_loader_tag", "litob_add_defer_attribute", 10, 2);
+add_filter('script_loader_tag', 'litob_add_defer_attribute', 10, 2);

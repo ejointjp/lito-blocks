@@ -1,17 +1,17 @@
-import materialIcons from "../../../helpers/material-symbols";
-import { stateColors } from "../../../helpers/colors";
-import { InspectorControls, useBlockProps, RichText } from "@wordpress/block-editor";
-import { PanelBody, BaseControl, ColorPalette } from "@wordpress/components";
+import materialIcons from '../../../helpers/material-symbols';
+import { stateColors } from '../../../helpers/colors';
+import { InspectorControls, useBlockProps, RichText } from '@wordpress/block-editor';
+import { PanelBody, BaseControl, ColorPalette } from '@wordpress/components';
 
 export default function edit(props) {
   const { attributes, setAttributes } = props;
   const { content, iconName, color } = attributes;
   const blockProps = useBlockProps({
-    style: { "--litob-marker-text-color": color },
+    style: { '--lito-marker-text-color': color },
   });
 
   const onClickIconButton = (icon) => {
-    if (icon.value === "") {
+    if (icon.value === '') {
       setAttributes({ iconName: undefined });
     } else {
       setAttributes({
@@ -33,12 +33,12 @@ export default function edit(props) {
                     key={i}
                     className={
                       icon.value === iconName
-                        ? "litob-editor-icon-item current"
-                        : "litob-editor-icon-item"
+                        ? 'litob-editor-icon-item current'
+                        : 'litob-editor-icon-item'
                     }
                     onClick={() => onClickIconButton(icon)}
                   >
-                    {icon.value !== "" ? (
+                    {icon.value !== '' ? (
                       <span className={icon.className}>{icon.value}</span>
                     ) : (
                       <div className="litob-editor-icon-item-blank">なし</div>
@@ -57,13 +57,13 @@ export default function edit(props) {
           </BaseControl>
         </PanelBody>
       </InspectorControls>
-      {iconName !== "" && <span className="material-symbols-outlined litob-icon">{iconName}</span>}
+      {iconName !== '' && <span className="material-symbols-outlined litob-icon">{iconName}</span>}
       <RichText
         tagName="span"
         className="wp-block-lito-marker-text-content"
         value={content}
         onChange={(content) => setAttributes({ content })}
-        placeholder={"テキストを入力"}
+        placeholder={'テキストを入力'}
       />
     </div>
   );

@@ -1,0 +1,6 @@
+.wp-block-litob-lead-sentense-more-button {
+  & .components-text-control__input {
+    border: none;
+    font-size: var(--lito-font-size-sm);
+  }
+}

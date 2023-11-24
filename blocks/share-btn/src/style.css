@@ -1,7 +1,7 @@
 .wp-block-lito-share-btn-label {
   display: flex;
   gap: 0.25rem;
-  color: var(--litob-font-size-base);
+  color: var(--lito-font-size-base);
 }
 
 .wp-block-lito-share-btn {
@@ -16,14 +16,15 @@
   align-items: center;
   padding: 0.25rem 1rem;
   border-radius: var(--wp--custom--radius--sm);
-  background-color: var(--litob-bg-base);
+  background-color: var(--lito-bg-base);
   outline: 2px solid transparent;
   outline-offset: 2px;
-  transition: 0.3s;
 
-  font-size: var(--litob-font-size-sm);
+  font-size: var(--lito-font-size-sm);
+  color: var(--lito-text-base);
+
   &:hover {
-    background-color: #e4e4e7;
+    color: var(--lito-text-base);
   }
 }
 

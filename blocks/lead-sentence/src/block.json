@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "lito/lead-sentence",
+  "version": "0.1.0",
+  "title": "Lead Sentence",
+  "category": "lito-blocks",
+  "icon": "text",
+  "description": "moreタグのあるなしでリード文を自動的に最適化します",
+  "example": {},
+  "supports": {
+    "html": false,
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true
+    },
+    "color": {
+      "text": true
+    }
+  },
+  "keywords": ["リード文", "概要", "excerpt", "more"],
+  "textdomain": "lead-sentence",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

@@ -1,7 +1,7 @@
-import icons from "../../../helpers/material-symbols";
-import { icon } from "../../../helpers/icon";
-import { InnerBlocks, useBlockProps, InspectorControls } from "@wordpress/block-editor";
-import { PanelBody, BaseControl } from "@wordpress/components";
+import icons from '../../../helpers/material-symbols';
+import { icon } from '../../../helpers/icon';
+import { InnerBlocks, useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import { PanelBody, BaseControl } from '@wordpress/components';
 
 export default function edit({ attributes, setAttributes }) {
   const { iconName } = attributes;
@@ -25,10 +25,10 @@ export default function edit({ attributes, setAttributes }) {
                 return (
                   <div
                     key={i}
-                    className={`litob-editor-icon-item ${isCurrent ? "current" : ""}`}
+                    className={`litob-editor-icon-item ${isCurrent ? 'current' : ''}`}
                     onClick={() => onClickIconButton(icon)}
                   >
-                    {icon.value !== "" ? (
+                    {icon.value !== '' ? (
                       <span className="material-symbols-outlined">{icon.value}</span>
                     ) : (
                       <div className="litob-editor-icon-item-blank">なし</div>
@@ -42,9 +42,9 @@ export default function edit({ attributes, setAttributes }) {
       </InspectorControls>
 
       <div {...blockProps}>
-        <div className="wp-block-lito-alert-inner">
-          {iconName !== "" && (
-            <span className="material-symbols-outlined litob-icon">{iconName}</span>
+        <div className="alert">
+          {iconName !== '' && (
+            <span className="material-symbols-outlined alert-icon">{iconName}</span>
           )}
           <div className="litob-inner-blocks">
             <InnerBlocks />

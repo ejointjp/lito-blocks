@@ -1,4 +1,4 @@
-import { InnerBlocks, useBlockProps } from "@wordpress/block-editor";
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
   const blockProps = useBlockProps.save();
@@ -6,9 +6,9 @@ export default function save({ attributes }) {
 
   return (
     <div {...blockProps}>
-      <div className="wp-block-lito-alert-inner">
-        {iconName !== "" && (
-          <span className="material-symbols-outlined litob-icon">{iconName}</span>
+      <div className="alert">
+        {iconName !== '' && (
+          <span className="material-symbols-outlined alert-icon">{iconName}</span>
         )}
         <div className="litob-inner-blocks">
           <InnerBlocks.Content />

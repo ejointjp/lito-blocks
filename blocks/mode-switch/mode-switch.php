@@ -25,12 +25,6 @@ if (!defined('ABSPATH')) {
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function litob_mode_switch_init() {
-  register_block_type(__DIR__ . '/build', [
-    'render_callback' => 'litob_mode_switch_callback',
-  ]);
+  register_block_type(__DIR__ . '/build');
 }
 add_action('init', 'litob_mode_switch_init');
-
-function litob_mode_switch_callback() {
-  return '<div class="wp-block-lito-mode-switch"></div>';
-}

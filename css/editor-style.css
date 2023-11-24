@@ -13,18 +13,22 @@
 }
 
 .litob-editor-icon-item:hover {
-  color: var(--wp--preset--color--primary, --litob-primary);
+  color: var(--wp--preset--color--primary, --lito-primary);
 }
 
 .litob-editor-icon-item.current {
-  background-color: var(--wp--preset--color--bg-base, var(--litob-bg-base));
+  background-color: var(--wp--preset--color--bg-base, var(--lito-bg-base));
 }
 
-.litob-inner-blocks .block-editor-block-list__layout > * {
+.block-editor-block-list__layout > * {
   margin-top: 0;
   margin-bottom: 0;
   width: 100%;
 }
+
+/* .litob-inner-blocks .block-editor-inner-blocks .block-editor-block-list__layout > p {
+  margin: 0 !important;
+} */
 
 /* Datetimeコンポーネントのスタイル修正 */
 .litob-components-panel-body .components-base-control,

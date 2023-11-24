@@ -1,7 +1,7 @@
 .wp-block-lito-toc {
-  padding: 1.5rem;
-  border-radius: var(--litob-box-radius);
-  background-color: var(--litob-bg-base);
+  padding: 1.5em;
+  border-radius: var(--lito-radius-md);
+  background-color: var(--lito-bg-base);
 
   &:empty {
     display: none;
@@ -10,41 +10,36 @@
 
 .wp-block-lito-toc-title {
   display: inline-block;
-  padding-bottom: 0.25rem;
+  padding-bottom: 0.25em;
   margin: 0;
-  font-size: 1.125rem;
+  font-size: 1.125em;
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
 .wp-block-lito-toc-list {
   display: block;
-  font-size: var(--litob-font-size-sm);
+  /* font-size: var(--lito-font-size-sm); */
   list-style-position: inside;
   padding-left: 0;
   margin: 0;
-
-  & > * + * {
-    border-top: 1px dashed white;
-  }
 }
 
 .wp-block-lito-toc-item {
   margin-left: 0 !important;
-  font-size: var(--su-font-size-xs);
+  /* font-size: var(--su-font-size-xs); */
   list-style: none !important;
 
-  @media (--sm) {
+  /* @media (--sm) {
     font-size: var(--su-fonnt-size-sm);
-  }
+  } */
 }
 
 .wp-block-lito-toc-a {
   display: flex;
   align-items: center;
-  padding: 0.5rem 0;
-  color: inherit;
-  transition: 0.2s;
+  padding: 0.25em 0;
+  color: var(--lito-text-base);
 
   &:hover {
     text-decoration: none;
@@ -59,21 +54,21 @@
 
 .wp-block-lito-toc-number {
   flex-shrink: 0;
-  margin-right: 0.5rem;
+  margin-right: 0.5em;
 }
 
 .wp-block-lito-toc-h2 {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .wp-block-lito-toc-h2 > .wp-block-lito-toc-number {
-  min-width: 1.25rem;
+  min-width: 1.25em;
 }
 
 .wp-block-lito-toc-h3 {
-  margin-left: 1.5rem;
+  margin-left: 1.5em;
 }
 
 .wp-block-lito-toc-h3 > .wp-block-lito-toc-number {
-  min-width: 2rem;
+  min-width: 2em;
 }

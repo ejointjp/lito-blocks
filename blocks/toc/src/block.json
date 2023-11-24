@@ -10,7 +10,10 @@
   "example": {},
   "supports": {
     "html": false,
-    "align": true
+    "align": true,
+    "typography": {
+      "fontSize": true
+    }
   },
   "keywords": ["目次", "toc", "table of contents"],
   "textdomain": "lito-blocks",

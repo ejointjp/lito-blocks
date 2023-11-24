@@ -20,7 +20,7 @@
   justify-content: center;
   width: 1.75rem;
   height: 1.75rem;
-  font-size: var(--litob-font-size-sm);
+  font-size: var(--lito-font-size-sm);
   font-weight: 600;
   line-height: 1;
   text-align: center;
@@ -30,7 +30,7 @@
 .wp-block-lito-faq-q {
   & > .wp-block-lito-faq-label {
     color: white;
-    background-color: var(--litob-primary);
+    background-color: var(--lito-primary);
   }
 
   & > p {
@@ -41,7 +41,7 @@
 
 .wp-block-lito-faq-a {
   & .wp-block-lito-faq-label {
-    background-color: var(--litob-bg-base);
+    background-color: var(--lito-bg-base);
   }
 }
 

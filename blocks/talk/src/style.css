@@ -23,7 +23,7 @@
   width: 4rem;
   height: 4rem;
   overflow: hidden;
-  border: 4px solid var(--litob-border-base);
+  border: 4px solid var(--lito-border-base);
   border-radius: 999px;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .wp-block-lito-talk-name {
-  font-size: var(--litob-font-size-sm);
+  font-size: var(--lito-font-size-sm);
   word-break: break-all;
   line-height: 1.5;
 }
@@ -42,7 +42,7 @@
 .wp-block-lito-talk-comment {
   grid-area: comment;
   padding: 1.5rem 2rem;
-  background-color: var(--litob-bg-base);
+  background-color: var(--lito-bg-base);
   border-radius: 1.25rem;
   border-top-left-radius: 0;
 
@@ -82,7 +82,7 @@
   }
 
   .wp-block-lito-talk-name {
-    font-size: var(--litob-font-size-xs);
+    font-size: var(--lito-font-size-xs);
   }
 
   .wp-block-lito-talk.is-style-right {
