@@ -60,7 +60,7 @@ function litob_share_button_render_callback($block_attributes, $content) {
   $html = '<div class="wp-block-lito-share-btn">';
 
   // Twitter
-  if ($block_attributes["twitter"]):
+  if ($block_attributes["twitter"]) :
 
     $base_url = "https://twitter.com/share";
     $args = [
@@ -71,40 +71,40 @@ function litob_share_button_render_callback($block_attributes, $content) {
     ];
     $share_url = add_query_arg($args, $base_url);
     ob_start();
-    ?>
-		<a class="wp-block-lito-share-btn-item" href="<?php echo esc_url(
-    $share_url
-  ); ?>" target="_blank" rel="nofollow noopener noreferrer">
-			<span class="wp-block-lito-share-btn-icon">
-				<?php include plugin_dir_path(__FILE__) . "../../svg/x.svg"; ?>
-			</span>
-			<span class="wp-block-lito-share-btn-label">ポスト</span>
-		</a>
-	<?php $html .= ob_get_clean();
+?>
+    <a class="wp-block-lito-share-btn-item" href="<?php echo esc_url(
+                                                    $share_url
+                                                  ); ?>" target="_blank" rel="nofollow noopener noreferrer">
+      <span class="wp-block-lito-share-btn-icon">
+        <?php include plugin_dir_path(__FILE__) . "../../svg/x.svg"; ?>
+      </span>
+      <span class="wp-block-lito-share-btn-label">ポスト</span>
+    </a>
+  <?php $html .= ob_get_clean();
   endif;
 
   // Facebook
-  if ($block_attributes["facebook"]):
+  if ($block_attributes["facebook"]) :
 
     $share_url = "https://www.facebook.com/sharer/sharer.php?u=" . get_permalink(get_the_ID());
     ob_start();
-    ?>
-		<a class="wp-block-lito-share-btn-item" href="<?php echo esc_url(
-    $share_url
-  ); ?>" target="_blank" rel="nofollow noopener noreferrer">
-			<?php
-    //get_template_part('components/icon/facebook');
-    ?>
-			<span class="wp-block-lito-share-btn-icon">
-				<?php include plugin_dir_path(__FILE__) . "../../svg/facebook.svg"; ?>
-			</span>
-			<span class="wp-block-lito-share-btn-label">シェア</span>
-		</a>
-	<?php $html .= ob_get_clean();
+  ?>
+    <a class="wp-block-lito-share-btn-item" href="<?php echo esc_url(
+                                                    $share_url
+                                                  ); ?>" target="_blank" rel="nofollow noopener noreferrer">
+      <?php
+      //get_template_part('components/icon/facebook');
+      ?>
+      <span class="wp-block-lito-share-btn-icon ignore-dark">
+        <?php include plugin_dir_path(__FILE__) . "../../svg/facebook.svg"; ?>
+      </span>
+      <span class="wp-block-lito-share-btn-label">シェア</span>
+    </a>
+  <?php $html .= ob_get_clean();
   endif;
 
   // Hatebu
-  if ($block_attributes["hatebu"]):
+  if ($block_attributes["hatebu"]) :
 
     $base_url = "https://b.hatena.ne.jp/entry/panel/";
     $args = [
@@ -113,32 +113,32 @@ function litob_share_button_render_callback($block_attributes, $content) {
     ];
     $share_url = add_query_arg($args, $base_url);
     ob_start();
-    ?>
-		<a class="wp-block-lito-share-btn-item" href="<?php echo esc_url(
-    $share_url
-  ); ?>" target="_blank" rel="nofollow noopener noreferrer">
-			<span class="wp-block-lito-share-btn-icon">
-				<?php include plugin_dir_path(__FILE__) . "../../svg/hatebu.svg"; ?>
-			</span>
-			<span class="wp-block-lito-share-btn-label">ブックマーク</span>
-		</a>
-	<?php $html .= ob_get_clean();
+  ?>
+    <a class="wp-block-lito-share-btn-item" href="<?php echo esc_url(
+                                                    $share_url
+                                                  ); ?>" target="_blank" rel="nofollow noopener noreferrer">
+      <span class="wp-block-lito-share-btn-icon ignore-dark">
+        <?php include plugin_dir_path(__FILE__) . "../../svg/hatebu.svg"; ?>
+      </span>
+      <span class="wp-block-lito-share-btn-label">ブックマーク</span>
+    </a>
+  <?php $html .= ob_get_clean();
   endif;
 
   // Pocket
-  if ($block_attributes["pocket"]):
+  if ($block_attributes["pocket"]) :
 
     ob_start();
     $share_url = "https://getpocket.com/save?url=" . get_permalink(get_the_ID());
-    ?>
-		<a class="wp-block-lito-share-btn-item" href="<?php echo esc_url(
-    $share_url
-  ); ?>" target="_blank" rel="nofollow noopener noreferrer">
-			<span class="wp-block-lito-share-btn-icon">
-				<?php include plugin_dir_path(__FILE__) . "../../svg/pocket.svg"; ?>
-			</span>
-			<span class="wp-block-lito-share-btn-label">Pocket</span>
-		</a>
+  ?>
+    <a class="wp-block-lito-share-btn-item" href="<?php echo esc_url(
+                                                    $share_url
+                                                  ); ?>" target="_blank" rel="nofollow noopener noreferrer">
+      <span class="wp-block-lito-share-btn-icon ignore-dark">
+        <?php include plugin_dir_path(__FILE__) . "../../svg/pocket.svg"; ?>
+      </span>
+      <span class="wp-block-lito-share-btn-label">Pocket</span>
+    </a>
 <?php $html .= ob_get_clean();
   endif;
 

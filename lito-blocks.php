@@ -37,6 +37,24 @@ function litob_setup() {
 }
 add_action('init', 'litob_setup');
 
+// 最速で.darkクラスをつける
+function litob_add_dark_mode_script() {
+?>
+  <script>
+    if (localStorage.getItem('LITOB_THEME') === 'dark') {
+      document.documentElement.classList.add('dark')
+    }
+  </script>
+  <style>
+    :root.dark,
+    :root.dark :where(img, video, iframe, #wpadminbar, .ignore-dark > svg) {
+      filter: invert(1) hue-rotate(180deg);
+    }
+  </style>
+<?php
+}
+add_action('wp_head', 'litob_add_dark_mode_script', 0);
+
 /**
  * Categories
  *

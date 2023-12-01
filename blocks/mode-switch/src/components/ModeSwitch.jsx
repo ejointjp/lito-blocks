@@ -48,9 +48,9 @@ export default function ModeSwitch() {
 
   useEffect(() => {
     if (darkmode) {
-      document.body.classList.add('dark');
+      document.documentElement.classList.add('dark');
     } else {
-      document.body.classList.remove('dark');
+      document.documentElement.classList.remove('dark');
     }
   });
 
@@ -66,7 +66,16 @@ export default function ModeSwitch() {
         anchorEl={anchorEl}
         onClose={handleClose}
         className="mode-switch-popover-wrapper"
-        classes={{ paper: 'mode-switch-popover' }}
+        // classes={{ paper: 'mode-switch-popover' }}
+        sx={{
+          '.MuiPaper-root': {
+            // MUIのPaperコンポーネントを指定
+            boxShadow: 'none', // box-shadowを無効にする
+            border: '1px solid var(--lito-border-base)',
+            padding: '0.5rem 0',
+            borderRadius: 'var(--lito-radius-sm)',
+          },
+        }}
       >
         <div className="">
           <div className="mode-switch-popover-item" onClick={() => changeMode('light')}>

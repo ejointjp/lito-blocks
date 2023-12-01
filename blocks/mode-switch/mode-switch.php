@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name:       Litography Blocks - Appearance Switch
  * Description:       Example block scaffolded with Create Block tool.
