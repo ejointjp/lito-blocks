@@ -47,7 +47,7 @@ function litob_add_dark_mode_script() {
   </script>
   <style>
     :root.dark,
-    :root.dark :where(img, video, iframe, #wpadminbar, .ignore-dark > svg) {
+    :root.dark :where(img:not(#wpadminbar img), video, iframe, #wpadminbar, .ignore-dark) {
       filter: invert(1) hue-rotate(180deg);
     }
   </style>
@@ -74,21 +74,13 @@ if (!function_exists('litob_categories')) {
   add_filter('block_categories_all', 'litob_categories', 10, 2);
 }
 
-// フロント用アセット
+// フロント・エディター用アセット
 function litob_enqueue() {
   // Google Material Icons
   wp_enqueue_style(
     'litob-google-material-symbols',
     'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined',
     [],
-    ''
-  );
-
-  wp_enqueue_style(
-    'lito-variables',
-    plugin_dir_url(__FILE__) . 'css/variables.css',
-    [],
-    filemtime(plugin_dir_path(__FILE__) . '/css/variables.css'),
     ''
   );
 
@@ -101,6 +93,20 @@ function litob_enqueue() {
   );
 }
 add_action('enqueue_block_assets', 'litob_enqueue');
+
+// フロントに読み込み
+if (!function_exists('litob_variables_enqueue')) {
+  function litob_variables_enqueue() {
+    wp_enqueue_style(
+      'litob-variables',
+      plugins_url('/css/variables.css', __FILE__),
+      [],
+      filemtime(plugin_dir_path(__FILE__) . '/css/variables.css')
+    );
+  }
+  add_action('enqueue_block_assets', 'litob_variables_enqueue', 10);
+}
+
 
 // エディター用アセット
 function litob_editor_enqueue() {

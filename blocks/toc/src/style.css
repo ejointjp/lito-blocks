@@ -19,7 +19,6 @@
 
 .wp-block-lito-toc-list {
   display: block;
-  /* font-size: var(--lito-font-size-sm); */
   list-style-position: inside;
   padding-left: 0;
   margin: 0;
@@ -27,12 +26,7 @@
 
 .wp-block-lito-toc-item {
   margin-left: 0 !important;
-  /* font-size: var(--su-font-size-xs); */
   list-style: none !important;
-
-  /* @media (--sm) {
-    font-size: var(--su-fonnt-size-sm);
-  } */
 }
 
 .wp-block-lito-toc-a {

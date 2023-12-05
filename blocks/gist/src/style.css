@@ -3,7 +3,7 @@
   padding-top: 1rem;
 
   & .wp-block-lito-marker-text .litob-icon {
-    color: var(--lito-marker-text-color, var(--lito-gist-color, var(--wp--custom--color--info)));
+    color: var(--lito-marker-text-color, var(--lito-gist-color, var(--lito-info)));
   }
 
   & .litob-inner-blocks {
@@ -19,9 +19,9 @@
   top: 0;
   left: 1rem;
   padding: 0.375rem 1rem;
-  font-size: var(--wp--preset--font-size--small, var(--lito-font-size-sm));
+  font-size: var(--lito-font-size-sm);
   color: white;
-  background-color: var(--lito-gist-color, var(--wp--custom--color--info));
+  background-color: var(--lito-gist-color, var(--lito-info));
   border-radius: 999px;
 
   & + .gist-list {

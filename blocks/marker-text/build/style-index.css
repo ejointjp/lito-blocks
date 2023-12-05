@@ -1,1 +1,1 @@
-.wp-block-lito-marker-text{display:grid;gap:.75rem;grid-template-columns:auto 1fr;& .litob-icon{color:var(--lito-marker-text-color,var(--wp--custom--color--info));transform:translateY(.3125rem)}}
+.wp-block-lito-marker-text{display:grid;gap:.75rem;grid-template-columns:auto 1fr;& .litob-icon{color:var(--lito-marker-text-color,var(--lito-info));transform:translateY(.3125rem)}}

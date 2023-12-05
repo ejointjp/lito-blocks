@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name:       Lito Blocks - Lead Sentence
  * Description:       Example block scaffolded with Create Block tool.
@@ -65,6 +66,5 @@ function litob_lead_sentence_render($attributes) {
 
 // moreタグがあるかをチェックする
 function litob_has_more_tag($content) {
-  error_log('strops ' . strpos($content, '<!-- wp:more -->'));
   return strpos($content, '<!-- wp:more -->') !== false;
 }

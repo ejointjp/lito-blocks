@@ -13,11 +13,11 @@
 }
 
 .litob-editor-icon-item:hover {
-  color: var(--wp--preset--color--primary, --lito-primary);
+  color: var(--lito-primary, --lito-primary);
 }
 
 .litob-editor-icon-item.current {
-  background-color: var(--wp--preset--color--bg-base, var(--lito-bg-base));
+  background-color: var(--lito-bg-base, var(--lito-bg-base));
 }
 
 .block-editor-block-list__layout > * {

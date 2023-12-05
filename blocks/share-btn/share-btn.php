@@ -95,7 +95,7 @@ function litob_share_button_render_callback($block_attributes, $content) {
       <?php
       //get_template_part('components/icon/facebook');
       ?>
-      <span class="wp-block-lito-share-btn-icon ignore-dark">
+      <span class="wp-block-lito-share-btn-icon">
         <?php include plugin_dir_path(__FILE__) . "../../svg/facebook.svg"; ?>
       </span>
       <span class="wp-block-lito-share-btn-label">シェア</span>
@@ -117,7 +117,7 @@ function litob_share_button_render_callback($block_attributes, $content) {
     <a class="wp-block-lito-share-btn-item" href="<?php echo esc_url(
                                                     $share_url
                                                   ); ?>" target="_blank" rel="nofollow noopener noreferrer">
-      <span class="wp-block-lito-share-btn-icon ignore-dark">
+      <span class="wp-block-lito-share-btn-icon">
         <?php include plugin_dir_path(__FILE__) . "../../svg/hatebu.svg"; ?>
       </span>
       <span class="wp-block-lito-share-btn-label">ブックマーク</span>
@@ -134,7 +134,7 @@ function litob_share_button_render_callback($block_attributes, $content) {
     <a class="wp-block-lito-share-btn-item" href="<?php echo esc_url(
                                                     $share_url
                                                   ); ?>" target="_blank" rel="nofollow noopener noreferrer">
-      <span class="wp-block-lito-share-btn-icon ignore-dark">
+      <span class="wp-block-lito-share-btn-icon">
         <?php include plugin_dir_path(__FILE__) . "../../svg/pocket.svg"; ?>
       </span>
       <span class="wp-block-lito-share-btn-label">Pocket</span>
