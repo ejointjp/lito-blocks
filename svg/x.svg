@@ -1,5 +1,9 @@
 <svg class="icon-x" fill="currentColor" area-hidden="true" xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 24 24">
+  <style>
+    .icon-x path {fill: #0f141a;}
+    .dark .icon-x path {fill: #f0ebe5}
+  </style>
   <path
     d="m16.67,19.2h1.7L7.4,4.7h-1.82l11.09,14.5Zm1.08-16.24h3.07l-6.7,7.66,7.88,10.42h-6.17l-4.83-6.32-5.53,6.32h-3.07l7.17-8.19L2,2.96h6.33l4.37,5.78,5.05-5.78Z" />
 </svg>

@@ -18,6 +18,26 @@
  * @package: lito-blocks
  */
 
+// 最速で.darkクラスをつける
+function litob_add_dark_mode_script() {
+?>
+  <script>
+    if (localStorage.getItem('LITOB_THEME') === 'dark') {
+      document.documentElement.classList.add('dark')
+    }
+  </script>
+  <!-- <style>
+    :root.dark,
+    :root.dark :where(img:not(#wpadminbar img), video, iframe, #wpadminbar, .ignore-dark) {
+      filter: invert(1) hue-rotate(180deg);
+    }
+  </style> -->
+<?php
+}
+add_action('wp_head', 'litob_add_dark_mode_script', 0);
+
+
+
 include plugin_dir_path(__FILE__) . './blocks/alert/alert.php';
 include plugin_dir_path(__FILE__) . './blocks/faq/faq.php';
 include plugin_dir_path(__FILE__) . './blocks/gist/gist.php';
@@ -37,23 +57,6 @@ function litob_setup() {
 }
 add_action('init', 'litob_setup');
 
-// 最速で.darkクラスをつける
-function litob_add_dark_mode_script() {
-?>
-  <script>
-    if (localStorage.getItem('LITOB_THEME') === 'dark') {
-      document.documentElement.classList.add('dark')
-    }
-  </script>
-  <style>
-    :root.dark,
-    :root.dark :where(img:not(#wpadminbar img), video, iframe, #wpadminbar, .ignore-dark) {
-      filter: invert(1) hue-rotate(180deg);
-    }
-  </style>
-<?php
-}
-add_action('wp_head', 'litob_add_dark_mode_script', 0);
 
 /**
  * Categories
@@ -87,7 +90,7 @@ function litob_enqueue() {
   wp_enqueue_style(
     'litob',
     plugin_dir_url(__FILE__) . 'css/style.css',
-    ['lito-variables'],
+    [],
     filemtime(plugin_dir_path(__FILE__) . '/css/style.css'),
     ''
   );

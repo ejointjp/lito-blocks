@@ -66,7 +66,7 @@ export default function ModeSwitch() {
         anchorEl={anchorEl}
         onClose={handleClose}
         className="mode-switch-popover-wrapper"
-        // classes={{ paper: 'mode-switch-popover' }}
+        classes={{ paper: 'mode-switch-popover' }}
         sx={{
           '.MuiPaper-root': {
             // MUIのPaperコンポーネントを指定

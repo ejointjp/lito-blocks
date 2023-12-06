@@ -13,14 +13,14 @@
   color: var(--lito-text-base);
 }
 
-/* .mode-switch-popover > .mode-switch-popover {
+.mode-switch-popover-wrapper .mode-switch-popover {
   padding: 0.5rem 0;
   background-color: var(--lito-bg-body);
 
   .dark & {
     border: 1px solid var(--lito-border-base);
   }
-} */
+}
 
 .mode-switch-popover-item {
   display: flex;
