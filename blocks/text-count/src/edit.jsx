@@ -1,12 +1,12 @@
-import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
+import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import {
   CheckboxControl,
   PanelBody,
   RangeControl,
   RadioControl,
   TextControl,
-} from "@wordpress/components";
-import ServerSideRender from "@wordpress/server-side-render";
+} from '@wordpress/components';
+import ServerSideRender from '@wordpress/server-side-render';
 
 export default function edit({ attributes, setAttributes }) {
   const blockProps = useBlockProps();
@@ -15,7 +15,7 @@ export default function edit({ attributes, setAttributes }) {
   return (
     <>
       <InspectorControls>
-        <PanelBody title="表示設定" initialOpen={true} className="unko">
+        <PanelBody title="表示設定" initialOpen={true}>
           <RangeControl
             help=""
             label="1分あたりに読む文字数"
@@ -33,26 +33,26 @@ export default function edit({ attributes, setAttributes }) {
             help=""
             onChange={(value) => {
               setAttributes({ showType: value });
-              if (value === "readingTime") {
-                setAttributes({ preText: "約", postText: "分で読めます" });
+              if (value === 'readingTime') {
+                setAttributes({ preText: '約', postText: '分で読めます' });
               } else {
-                setAttributes({ preText: "", postText: "文字" });
+                setAttributes({ preText: '', postText: '文字' });
               }
             }}
             options={[
               {
-                label: "文字数",
-                value: "textCount",
+                label: '文字数',
+                value: 'textCount',
               },
               {
-                label: "読了時間（分）",
-                value: "readingTime",
+                label: '読了時間（分）',
+                value: 'readingTime',
               },
             ]}
             selected={showType}
           />
 
-          {showType !== "readingTime" && (
+          {showType !== 'readingTime' && (
             <CheckboxControl
               label="文字数を丸める（50単位）"
               help="例 1231 -> 1250"
@@ -75,7 +75,7 @@ export default function edit({ attributes, setAttributes }) {
 
           <TextControl
             label="接尾辞"
-            placeholder={showType === "readingTime" ? "分で読めます" : "文字"}
+            placeholder={showType === 'readingTime' ? '分で読めます' : '文字'}
             value={postText}
             onChange={(value) => setAttributes({ postText: value })}
           />

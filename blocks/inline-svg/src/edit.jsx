@@ -1,23 +1,44 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, MediaPlaceholder } from '@wordpress/block-editor';
 import { useState } from '@wordpress/element';
-import { PanelBody, RangeControl, SelectControl, ToggleControl } from '@wordpress/components';
-import { InspectorControls } from '@wordpress/block-editor';
+import {
+  PanelBody,
+  Button,
+  BaseControl,
+  RangeControl,
+  SelectControl,
+  ToggleControl,
+} from '@wordpress/components';
+import {
+  AlignmentToolbar,
+  InspectorControls,
+  BlockControls,
+  MediaUpload,
+  MediaUploadCheck,
+  MediaReplaceFlow,
+} from '@wordpress/block-editor';
 import { ReactSVG } from 'react-svg';
 
-export default function Controls({ attributes, setAttributes }) {
+export default function edit({ attributes, setAttributes }) {
+  console.log('attributes', attributes);
   const ALLOWED_MEDIA_TYPES = ['image/svg+xml'];
-  const { width, url, unit, linkToHome, openNewTab } = attributes;
+  const { textAlign, width, height, id, url, unit, linkToHome, openNewTab } = attributes;
 
+  const blockProps = useBlockProps({
+    style: {
+      textAlign,
+    },
+  });
   // 単位に応じた RangeControl の設定
   const [max, setMax] = useState(unit !== 'px' ? 100 : 1000);
   const [step, setStep] = useState(unit !== 'px' ? 0.25 : 1);
+  // const [filename, setFilename] = useState('');
 
   const onSelectImage = (media) => {
     // if (!media.sizes && !media.media_details?.sizes) {
     //   return;
     // }
-
+    console.log('media', media);
     if (media.media_details) {
       media.sizes = media.media_details.sizes;
     }
@@ -38,8 +59,28 @@ export default function Controls({ attributes, setAttributes }) {
     setAttributes({ unit });
   };
 
+  const onError = (message) => {
+    console.log(__(`Something went wrong, please try again. Message: ${message}`, 'lito-blocks'));
+  };
+
+  const sizeStyle = () => {
+    const styles = [];
+    if (width > 0) {
+      styles.push(`width:${width}${unit};`);
+    } else {
+      styles.push('width: auto;');
+    }
+    if (height > 0) {
+      styles.push(`height:${height}${unit};`);
+    } else {
+      styles.push('height: auto;');
+    }
+
+    return styles.join('');
+  };
+
   return (
-    <div {...useBlockProps()}>
+    <div {...blockProps}>
       {!url && (
         <MediaPlaceholder
           onSelect={onSelectImage}
@@ -48,31 +89,53 @@ export default function Controls({ attributes, setAttributes }) {
           value={url}
           labels={{
             title: 'SVG Site Logo',
-            instructions: __('Upload an SVG or pick one from your media library.', 'safe-svg'),
+            instructions: __('Upload an SVG or pick one from your media library.', 'lito-blocks'),
           }}
         />
       )}
 
       {url && (
-        <div className="wp-block-lito-inline-svg-item" style={{ width: `${width}${unit}` }}>
-          <ReactSVG
-            src={url}
-            // beforeInjection={(svg) => {
-            //   svg.setAttribute('style', `width: ${width}${unit};`);
-            // }}
-          />
-        </div>
+        <ReactSVG
+          src={url}
+          beforeInjection={(svg) => {
+            svg.setAttribute('style', sizeStyle());
+          }}
+          wrapper="span"
+        />
       )}
 
+      <BlockControls>
+        <AlignmentToolbar
+          value={textAlign}
+          onChange={(value) => setAttributes({ textAlign: value })}
+        />
+      </BlockControls>
+      <BlockControls>
+        <MediaReplaceFlow
+          mediaId={id}
+          mediaURL={id}
+          allowedTypes={ALLOWED_MEDIA_TYPES}
+          accept={ALLOWED_MEDIA_TYPES}
+          onSelect={onSelectImage}
+          onError={onError}
+        />
+      </BlockControls>
+
       <InspectorControls>
-        <PanelBody
-          title={'設定'}
-          className="su-components-panel__body su-components-panel__body--litobc"
-        >
+        <PanelBody title="設定">
           <RangeControl
             label="幅"
             value={width}
             onChange={(value) => setAttributes({ width: value })}
+            min={0}
+            max={max}
+            step={step}
+          />
+
+          <RangeControl
+            label="高さ"
+            value={height}
+            onChange={(value) => setAttributes({ height: value })}
             min={0}
             max={max}
             step={step}
@@ -101,35 +164,30 @@ export default function Controls({ attributes, setAttributes }) {
             onChange={(value) => setAttributes({ openNewTab: value })}
           />
 
-          {/* <BaseControl label="サムネイルを手動で設定">
-            <MediaUploadCheck>
+          <BaseControl label="">
+            {/* <MediaUploadCheck>
               <MediaUpload
-                onSelect={(value) => {
-                  setAttributes({
-                    thumbnailId: value.id,
-                    url: value.url,
-                  });
-                }}
-                allowedTypes={['image']}
-                value={url}
+                onSelect={onSelectImage}
+                allowedTypes={ALLOWED_MEDIA_TYPES}
+                value={id}
                 render={({ open }) => (
                   <Button onClick={open} className="editor-post-featured-image__toggle">
                     SVG画像を設定
                   </Button>
                 )}
               />
-            </MediaUploadCheck>
+            </MediaUploadCheck> */}
 
             <Button
               style={{ marginTop: '0.5rem' }}
-              isTertiary
+              className="is-tertiary"
               onClick={() => {
-                setAttributes({ url: '' });
+                setAttributes({ id: 0, url: '' });
               }}
             >
-              クリア
+              画像をクリア
             </Button>
-          </BaseControl> */}
+          </BaseControl>
         </PanelBody>
       </InspectorControls>
     </div>

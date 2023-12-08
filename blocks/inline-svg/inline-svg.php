@@ -33,6 +33,10 @@ function litob_inline_svg_init() {
         'type' => 'number',
         'default' => 200,
       ],
+      'height' => [
+        'type' => 'number',
+        'default' => 0,
+      ],
       'unit' => [
         'type' => 'string',
         'default' => 'px', // SVGでは 'px' の方が一般的なので、ここを 'px' に変更しています
@@ -52,61 +56,58 @@ function litob_inline_svg_init() {
       'openNewTab' => [
         'type' => 'boolean',
         'default' => false
-      ]
+      ],
+      "textAlign" => [
+        'type' => 'string',
+        'default' => ''
+      ],
     ]
   ]);
 }
 add_action('init', 'litob_inline_svg_init');
 
 function litob_inline_svg_render_callback($attributes) {
-  $url = $attributes['url'];
-  if ($url === '') return;
+  $id = $attributes['id'];
 
-  $class_list = ['wp-block-lito-inline-svg'];
-  $align_class = isset($attributes['align']) ? 'align' . $attributes['align'] : '';
-  if ($align_class) {
-    array_push($class_list, $align_class);
+  // SVG以外なら空の文字列を返す
+  if ('image/svg+xml' !== get_post_mime_type($id)) {
+    return '';
   }
-  $class_string = implode(' ', $class_list);
 
+  $image_path = get_attached_file($id);
+  // SVG要素が取得できなければ空の文字列を返す
+  if (!$svg_content = file_get_contents($image_path)) {
+    return '';
+  }
+
+  // サニタイズを行う
+  $sanitized_svg = litob_sanitize_svg($svg_content);
 
   $alt = get_post_meta($attributes['id'], '_wp_attachment_image_alt');
-
   $alt = !empty($alt[0]) ? esc_html($alt[0]) : '';
   $target = $attributes['openNewTab'] ? ' target="_blank"' : '';
+  $width = $attributes['width'];
+  $unit = $attributes['unit'];
+  $style = sprintf('width: %d%s;', $width, $unit);
+  $align_style = isset($attributes['textAlign']) && $attributes['textAlign'] ? ' style="text-align:' . $attributes['textAlign'] : '';
+  $html = sprintf('<div class="wp-block-lito-inline-svg"%s>', $align_style);
+  $$html .= '</div>';
 
-  // URLが存在し、有効であることを確認
-  if (!empty($url) && filter_var($url, FILTER_VALIDATE_URL)) {
-    $svg_content = @file_get_contents($url);
-    error_log('aaa' . print_r($svg_content, true));
-    // SVGコンテンツが取得できた場合、サニタイズを行う
-    if ($svg_content) {
-      $sanitized_svg = litob_sanitize_svg($svg_content);
 
-      // 幅と単位の属性を取得し、スタイル文字列を生成
-      $width = $attributes['width'];
-      $unit = $attributes['unit'];
-      $style = sprintf('width: %d%s;', $width, $unit);
+  // サニタイズされたSVGコンテンツをスタイル付きで出力
+  // $html = sprintf('<div class="%s">', $class_string);
+  // $html = '<div class="wp-block-lito-inline-svg">';
+  // if ($attributes['linkToHome']) {
+  //   $html .= sprintf('<a%s href="%s" alt="%s">', $target, home_url('/'), $alt);
+  // }
+  // $html .= sprintf('<div class="wp-block-lito-inline-svg-item" style="%s">%s</div>', $style, $sanitized_svg);
+  // if ($attributes['linkToHome']) {
+  //   $html .= '</a>';
+  // }
+  // $html .= '</div>';
 
-      // サニタイズされたSVGコンテンツをスタイル付きで出力
-      $html = sprintf('<div class="%s">', $class_string);
-      if ($attributes['linkToHome']) {
-        $html .= sprintf('<a%s href="%s" alt="%s">', $target, home_url('/'), $alt);
-      }
-      $html .= sprintf('<div class="wp-block-lito-inline-svg-item" style="%s">%s</div>', $style, $sanitized_svg);
-      if ($attributes['linkToHome']) {
-        $html .= '</a>';
-      }
-      $html .= '</div>';
+  // return $html;
 
-      return $html;
-    } else {
-      return print_r($svg_content, true);
-    }
-  }
-
-  // SVGコンテンツが取得できなかった、またはURLが無効だった場合は何も出力しない
-  return '';
 }
 
 // SVGコンテンツをサニタイズする関数
@@ -117,6 +118,7 @@ if (!function_exists('litob_sanitize_svg')) {
       'svg' =>
       [
         'class' => true,
+        'style' => true,
         'aria-hidden' => true,
         'aria-labelledby' => true,
         'role' => true,
