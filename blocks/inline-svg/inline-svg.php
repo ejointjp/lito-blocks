@@ -82,16 +82,24 @@ function litob_inline_svg_render_callback($attributes) {
 
   // サニタイズを行う
   $sanitized_svg = litob_sanitize_svg($svg_content);
+  $width = $attributes['width'] > 0 ? $attributes['width'] . $attributes['unit'] : 'auto';
+  $height = $attributes['height'] > 0 ? $attributes['height'] . $attributes['unit'] : 'auto';
+  $style = sprintf('style="width:%s;height:%s;"', $width, $height);
+  $styled_svg = str_replace('<svg', '<svg ' . $style, $sanitized_svg);
 
   $alt = get_post_meta($attributes['id'], '_wp_attachment_image_alt');
   $alt = !empty($alt[0]) ? esc_html($alt[0]) : '';
-  $target = $attributes['openNewTab'] ? ' target="_blank"' : '';
-  $width = $attributes['width'];
-  $unit = $attributes['unit'];
-  $style = sprintf('width: %d%s;', $width, $unit);
-  $align_style = isset($attributes['textAlign']) && $attributes['textAlign'] ? ' style="text-align:' . $attributes['textAlign'] : '';
+
+  if ($attributes['linkToHome']) {
+    $target = $attributes['openNewTab'] ? ' target="_blank"' : '';
+    $styled_svg = sprintf('<a href="%s"%s>%s</a>', home_url(), $target, $styled_svg);
+  }
+
+  $align_style = isset($attributes['textAlign']) && $attributes['textAlign'] ? ' style="text-align:' . $attributes["textAlign"] . '"' : '';
+
   $html = sprintf('<div class="wp-block-lito-inline-svg"%s>', $align_style);
-  $$html .= '</div>';
+  $html .= $styled_svg;
+  $html .= '</div>';
 
 
   // サニタイズされたSVGコンテンツをスタイル付きで出力
@@ -108,6 +116,7 @@ function litob_inline_svg_render_callback($attributes) {
 
   // return $html;
 
+  return $html;
 }
 
 // SVGコンテンツをサニタイズする関数
