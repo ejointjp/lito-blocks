@@ -1,7 +1,7 @@
 .wp-block-lito-toc {
   padding: 1.5em;
   border-radius: var(--lito-radius-md);
-  background-color: var(--lito-bg-base);
+  background-color: var(--lito-base-gray);
 
   &:empty {
     display: none;
@@ -33,7 +33,7 @@
   display: flex;
   align-items: center;
   padding: 0.25em 0;
-  color: var(--lito-text-base);
+  color: var(--lito-dark-gray);
 
   &:hover {
     text-decoration: none;

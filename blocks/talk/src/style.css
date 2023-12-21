@@ -23,7 +23,7 @@
   width: 4rem;
   height: 4rem;
   overflow: hidden;
-  border: 4px solid var(--lito-border-base);
+  border: 4px solid var(--lito-light-gray);
   border-radius: 999px;
 }
 
@@ -42,7 +42,7 @@
 .wp-block-lito-talk-comment {
   grid-area: comment;
   padding: 1.5rem 2rem;
-  background-color: var(--lito-bg-base);
+  background-color: var(--lito-base-gray);
   border-radius: 1.25rem;
   border-top-left-radius: 0;
 

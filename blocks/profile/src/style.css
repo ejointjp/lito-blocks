@@ -6,7 +6,7 @@
     "avatar description" 1fr / 3rem 1fr;
   column-gap: 1rem;
   font-size: var(--lito-font-size-sm);
-  background-color: var(--lito-bg-base);
+  background-color: var(--lito-base-gray);
   padding: 1.5rem;
   border-radius: var(--lito-radius-md);
 }

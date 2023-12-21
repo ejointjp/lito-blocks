@@ -10,15 +10,15 @@
   cursor: pointer;
   display: grid;
   place-items: center;
-  color: var(--lito-text-base);
+  color: var(--lito-dark-gray);
 }
 
 .mode-switch-popover-wrapper .mode-switch-popover {
   padding: 0.5rem 0;
-  background-color: var(--lito-bg-body);
+  background-color: var(--lito-screen);
 
   .dark & {
-    border: 1px solid var(--lito-border-base);
+    border: 1px solid var(--lito-light-gray);
   }
 }
 
@@ -30,14 +30,14 @@
   font-size: var(--lito-font-size-sm);
   cursor: pointer;
   transition: 0.2s;
-  color: var(--lito-text-base);
+  color: var(--lito-dark-gray);
 
   & > span:first-child {
-    color: var(--lito-text-light);
+    color: var(--lito-gray);
   }
 
   &:hover {
-    background-color: var(--lito-bg-base);
+    background-color: var(--lito-base-gray);
   }
 }
 

@@ -71,7 +71,7 @@ export default function ModeSwitch() {
           '.MuiPaper-root': {
             // MUIのPaperコンポーネントを指定
             boxShadow: 'none', // box-shadowを無効にする
-            border: '1px solid var(--lito-border-base)',
+            border: '1px solid var(--lito-light-gray)',
             padding: '0.5rem 0',
             borderRadius: 'var(--lito-radius-sm)',
           },
