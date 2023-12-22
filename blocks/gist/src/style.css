@@ -7,7 +7,7 @@
   }
 
   & .litob-inner-blocks {
-    background-color: var(--lito-bg-base);
+    background-color: var(--lito-base-gray);
     border-radius: var(--lito-radius-md);
     padding: var(--lito-spacing-box);
     padding-top: 2rem;

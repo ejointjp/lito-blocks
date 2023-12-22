@@ -9,7 +9,7 @@
 }
 
 .limited-time-label {
-  background-color: var(--lito-bg-base);
+  background-color: var(--lito-base-gray);
   padding: 0.125rem 0.5rem;
   border-radius: 0.25rem;
   font-size: var(--lito-font-size-sm);

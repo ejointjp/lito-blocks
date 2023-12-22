@@ -1,6 +1,6 @@
 .wp-block-lito-alert {
-  --lito-color: var(--lito-text-base);
-  --lito-bg: var(--lito-bg-base);
+  --lito-color: var(--lito-dark-gray);
+  --lito-bg: var(--lito-base-gray);
   container-type: inline-size;
 
   &.is-style-info {

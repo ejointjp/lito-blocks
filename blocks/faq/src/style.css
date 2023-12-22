@@ -41,7 +41,7 @@
 
 .wp-block-lito-faq-a {
   & .wp-block-lito-faq-label {
-    background-color: var(--lito-bg-base);
+    background-color: var(--lito-base-gray);
   }
 }
 
