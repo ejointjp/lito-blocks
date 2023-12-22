@@ -5,14 +5,14 @@ import {
   PlainText,
   RichText,
   useBlockProps,
-} from "@wordpress/block-editor";
-import { Button } from "@wordpress/components";
+} from '@wordpress/block-editor';
+import { Button } from '@wordpress/components';
 
 export default function edit({ attributes, setAttributes }) {
   const { avatarID, avatarAlt, avatarURL, avatarBorderColor, avatarName, comment } = attributes;
 
   // const modifierClassName = modifier === "" ? "talk" : "talk talk--" + modifier;
-  const blockProps = useBlockProps();
+  const blockProps = useBlockProps({ className: 'talk' });
 
   const renderAvatar = (obj) => {
     return (
@@ -46,16 +46,16 @@ export default function edit({ attributes, setAttributes }) {
             {
               value: avatarBorderColor,
               onChange: (value) => setAttributes({ avatarBorderColor: value }),
-              label: "アバターの枠線",
+              label: 'アバターの枠線',
             },
           ]}
         />
       </InspectorControls>
 
       <div {...blockProps}>
-        <div className="wp-block-lito-talk-inner">
-          <div className="wp-block-lito-talk-avatar">
-            <div className="wp-block-lito-talk-figure" style={figureStyles}>
+        <div className="talk-inner">
+          <div className="talk-avatar">
+            <div className="talk-figure" style={figureStyles}>
               <MediaUpload
                 onSelect={onSelectImage}
                 type="image"
@@ -63,7 +63,7 @@ export default function edit({ attributes, setAttributes }) {
                 render={renderAvatar}
               />
             </div>
-            <div className="wp-block-lito-talk-name">
+            <div className="talk-name">
               <PlainText
                 value={avatarName}
                 onChange={(value) => setAttributes({ avatarName: value })}
@@ -72,7 +72,7 @@ export default function edit({ attributes, setAttributes }) {
             </div>
           </div>
           <RichText
-            className="wp-block-lito-talk-comment"
+            className="talk-comment"
             value={comment}
             onChange={(value) => setAttributes({ comment: value })}
             placeholder="会話を入力"

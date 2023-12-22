@@ -1,0 +1,9 @@
+.wp-block-lito-limited-time > :first-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.wp-block-lito-limited-time > * + * {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}

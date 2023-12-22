@@ -1,24 +1,24 @@
 // import { icon } from "../../../helpers/icon";
-import { PanelBody, DateTimePicker, Button } from "@wordpress/components";
-import { useBlockProps, InspectorControls, InnerBlocks } from "@wordpress/block-editor";
+import { PanelBody, DateTimePicker, Button } from '@wordpress/components';
+import { useBlockProps, InspectorControls, InnerBlocks } from '@wordpress/block-editor';
 
 export default function Edit({ attributes, setAttributes }) {
   const { startDateTime, endDateTime } = attributes;
-  const blockProps = useBlockProps({ className: "limited-time" });
+  const blockProps = useBlockProps();
 
   const formatDate = (dateVal) => {
     if (dateVal) {
       const date = new Date(dateVal);
       return (
         date.getFullYear() +
-        "-" +
-        ("0" + (date.getMonth() + 1)).slice(-2) +
-        "-" +
-        ("0" + date.getDate()).slice(-2) +
-        " " +
-        ("0" + date.getHours()).slice(-2) +
-        ":" +
-        ("0" + date.getMinutes()).slice(-2)
+        '-' +
+        ('0' + (date.getMonth() + 1)).slice(-2) +
+        '-' +
+        ('0' + date.getDate()).slice(-2) +
+        ' ' +
+        ('0' + date.getHours()).slice(-2) +
+        ':' +
+        ('0' + date.getMinutes()).slice(-2)
       );
     }
   };
