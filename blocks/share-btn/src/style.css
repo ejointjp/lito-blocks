@@ -18,8 +18,8 @@
   border-radius: var(--lito-radius-sm);
   background-color: var(--lito-base-gray);
   outline: 2px solid transparent;
+  text-decoration: none;
   outline-offset: 2px;
-
   font-size: var(--lito-font-size-sm);
   color: var(--lito-dark-gray);
 
