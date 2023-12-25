@@ -49,6 +49,9 @@
     },
     "comment": {
       "type": "string",
+      "source": "html",
+      "selector": ".talk-comment",
+      "multiline": "p",
       "default": ""
     }
   },

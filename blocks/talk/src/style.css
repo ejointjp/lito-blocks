@@ -2,14 +2,14 @@
   container-type: inline-size;
 }
 
-.wp-block-lito-talk-inner {
+.talk-inner {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem 1.5rem;
 }
 
-.wp-block-lito-talk-avatar {
+.talk-avatar {
   display: flex;
   flex-grow: 0;
   flex-shrink: 0;
@@ -19,7 +19,7 @@
   border: none;
 }
 
-.wp-block-lito-talk-figure {
+.talk-figure {
   width: 4rem;
   height: 4rem;
   overflow: hidden;
@@ -27,19 +27,19 @@
   border-radius: 999px;
 }
 
-.wp-block-lito-talk-figure > img {
+.talk-figure > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.wp-block-lito-talk-name {
+.talk-name {
   font-size: var(--lito-font-size-sm);
   word-break: break-all;
   line-height: 1.5;
 }
 
-.wp-block-lito-talk-comment {
+.talk-comment {
   grid-area: comment;
   padding: 1.5rem 2rem;
   background-color: var(--lito-base-gray);
@@ -56,37 +56,37 @@
 }
 
 .wp-block-lito-talk.is-style-right {
-  & .wp-block-lito-talk-inner {
+  & .talk-inner {
     align-items: flex-end;
   }
 
-  & .wp-block-lito-talk-avatar {
+  & .talk-avatar {
     flex-direction: row-reverse;
   }
 
-  & .wp-block-lito-talk-comment {
+  & .talk-comment {
     border-top-left-radius: 1.5rem;
     border-top-right-radius: 0;
   }
 }
 
 @container (768px <= width) {
-  .wp-block-lito-talk-inner {
+  .talk-inner {
     flex-direction: row;
     align-items: flex-start;
   }
 
-  :is(.wp-block-lito-talk, .wp-block-lito-talk.is-style-right) .wp-block-lito-talk-avatar {
+  :is(.wp-block-lito-talk, .wp-block-lito-talk.is-style-right) .talk-avatar {
     flex-direction: column;
     flex-basis: 4.5rem;
   }
 
-  .wp-block-lito-talk-name {
+  .talk-name {
     font-size: var(--lito-font-size-xs);
   }
 
   .wp-block-lito-talk.is-style-right {
-    & .wp-block-lito-talk-inner {
+    & .talk-inner {
       flex-direction: row-reverse;
       align-items: flex-start;
     }
