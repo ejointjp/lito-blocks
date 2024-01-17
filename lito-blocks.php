@@ -46,6 +46,7 @@ include plugin_dir_path(__FILE__) . './blocks/lead-sentence/lead-sentence.php';
 include plugin_dir_path(__FILE__) . './blocks/limited-time/limited-time.php';
 include plugin_dir_path(__FILE__) . './blocks/marker-text/marker-text.php';
 include plugin_dir_path(__FILE__) . './blocks/mode-switch/mode-switch.php';
+include plugin_dir_path(__FILE__) . './blocks/post-date/index.php';
 include plugin_dir_path(__FILE__) . './blocks/profile/profile.php';
 include plugin_dir_path(__FILE__) . './blocks/share-btn/share-btn.php';
 include plugin_dir_path(__FILE__) . './blocks/talk/talk.php';

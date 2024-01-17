@@ -5,7 +5,6 @@
   "version": "0.1.0",
   "title": "アラート",
   "category": "lito-blocks",
-  "icon": "info",
   "description": "アイコンつきのアラート文を作成できます",
   "example": {},
   "attributes": {
