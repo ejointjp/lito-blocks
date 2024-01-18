@@ -3,12 +3,11 @@
   "apiVersion": 3,
   "name": "lito/mode-switch",
   "version": "0.1.0",
-  "title": "モードスイッチ",
+  "title": "ライト/ダーク切り替え",
   "category": "lito-blocks",
-  "icon": "smiley",
   "description": "ライト・ダークモードの切り替えスイッチ",
   "example": {},
-  "keywords": ["button", "dark"],
+  "keywords": ["button", "dark", "light", "ライト", "ダーク", "モード"],
   "supports": {
     "html": false
   },

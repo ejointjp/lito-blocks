@@ -1,3 +1,7 @@
-.wp-block-lito-share-btn {
+.share-btn {
   pointer-events: none;
+}
+
+.share-btn-item {
+  text-decoration: none !important;
 }

@@ -5,7 +5,6 @@
   "version": "0.1.0",
   "title": "期間限定表示",
   "category": "lito-blocks",
-  "icon": "clock",
   "description": "内包ブロックの表示期間を指定できます",
   "attributes": {
     "startDateTime": {

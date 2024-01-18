@@ -5,7 +5,6 @@
   "version": "0.1.0",
   "title": "記事の文字数",
   "category": "lito-blocks",
-  "icon": "calculator",
   "description": "Example block scaffolded with Create Block tool.",
   "example": {},
   "supports": {

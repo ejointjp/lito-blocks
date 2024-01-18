@@ -5,7 +5,6 @@
   "version": "0.1.0",
   "title": "マーカーテキスト",
   "category": "lito-blocks",
-  "icon": "yes",
   "description": "アイコンつきのテキストを作成できます",
   "attributes": {
     "content": {

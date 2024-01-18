@@ -5,7 +5,6 @@
   "version": "0.1.0",
   "title": "吹き出し",
   "category": "lito-blocks",
-  "icon": "businessperson",
   "description": "アイコン付きの吹き出し",
   "example": {},
   "supports": {

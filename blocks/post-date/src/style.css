@@ -1,0 +1,38 @@
+.post-date {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+}
+.post-date-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.post-date-content {
+  flex-shrink: 0;
+}
+
+.post-date.is-style-icon > .post-date-item {
+  display: flex;
+  gap: 0.25em;
+  align-items: center;
+}
+
+.post-date.is-style-icon > .post-date-item::before {
+  display: grid;
+  place-items: center;
+  width: 1.25em;
+  height: 1.25em;
+  content: "";
+  background-color: var(--wp--preset--color--gray);
+}
+
+.post-date.is-style-icon > .post-date-published::before {
+  mask-image: url("../../../svg/heroicons/clock.svg");
+}
+
+.post-date.is-style-icon > .post-date-updated::before {
+  mask-image: url("../../../svg/heroicons/arrow-path.svg");
+}

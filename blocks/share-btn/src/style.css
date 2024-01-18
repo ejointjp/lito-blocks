@@ -1,16 +1,16 @@
-.wp-block-lito-share-btn-label {
+.share-btn-label {
   display: flex;
   gap: 0.25rem;
   color: var(--lito-font-size-base);
 }
 
-.wp-block-lito-share-btn {
+.share-btn {
   display: flex;
   gap: 0.55rem;
   flex-wrap: wrap;
 }
 
-.wp-block-lito-share-btn-item {
+.share-btn-item {
   display: flex;
   gap: 0.25rem;
   align-items: center;
@@ -28,7 +28,7 @@
   }
 }
 
-.wp-block-lito-share-btn-icon {
+.share-btn-icon {
   width: 1.25rem;
   height: 1.25rem;
 }

@@ -24,12 +24,12 @@
 function litob_toc_init() {
   register_block_type(__DIR__ . '/build', [
     'render_callback' => 'litob_toc_render_callback',
-    // 'attributes' => [
-    // 	'postCount' => [
-    // 		'type' => 'number',
-    // 		'default' => 10 // デフォルトの投稿数
-    // 	]
-    // ]
+    'attributes' => [
+      'hideIfOtherExists' => [
+        'type' => 'boolean',
+        'default' => false
+      ]
+    ]
   ]);
 }
 add_action('init', 'litob_toc_init');
@@ -45,7 +45,12 @@ function litob_toc_render_callback($attributes, $content) {
 
   // スタイルをブロックのHTMLに適用
   $style = $font_size ? ' style="font-size: ' . esc_attr($font_size) . '"' : '';
-  return '<div class="wp-block-lito-toc"' . $style . '></div>';
+
+  // データ属性を追加する
+  $hideIfOtherExists = $attributes['hideIfOtherExists'] ?? false;
+  $dataAttribute = $hideIfOtherExists ? ' data-hide-if-other-exists="true"' : '';
+
+  return '<div class="wp-block-lito-toc"' . $style . $dataAttribute . '></div>';
 }
 
 // scriptタグにdeferを付与

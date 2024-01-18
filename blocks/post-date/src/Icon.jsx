@@ -7,7 +7,7 @@ export default function Icon() {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="lito-blocks-icon"
+        className="litob-icon"
       >
         <path
           strokeLinecap="round"

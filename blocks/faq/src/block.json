@@ -4,7 +4,6 @@
   "name": "lito/faq",
   "version": "0.1.0",
   "title": "Faq",
-  "icon": "admin-comments",
   "category": "lito-blocks",
   "keywords": ["faq", "qanda", "よくある質問"],
   "attributes": {

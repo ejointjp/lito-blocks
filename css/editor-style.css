@@ -20,6 +20,10 @@
   background-color: var(--lito-base-gray, var(--lito-base-gray));
 }
 
+.litob-icon {
+  color: var(--lito-primary);
+}
+
 .block-editor-block-list__layout > * {
   margin-top: 0;
   margin-bottom: 0;

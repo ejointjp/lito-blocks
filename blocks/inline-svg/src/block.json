@@ -3,7 +3,7 @@
   "apiVersion": 3,
   "name": "lito/inline-svg",
   "version": "0.1.0",
-  "title": "Svg Site Logo",
+  "title": "Inline SVG",
   "category": "widgets",
   "icon": "smiley",
   "description": "Example block scaffolded with Create Block tool.",
