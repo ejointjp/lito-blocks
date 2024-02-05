@@ -39,6 +39,7 @@ add_action('wp_head', 'litob_add_dark_mode_script', 0);
 
 
 include plugin_dir_path(__FILE__) . './blocks/alert/alert.php';
+include plugin_dir_path(__FILE__) . './blocks/evaluation/index.php';
 include plugin_dir_path(__FILE__) . './blocks/faq/faq.php';
 include plugin_dir_path(__FILE__) . './blocks/gist/gist.php';
 include plugin_dir_path(__FILE__) . './blocks/inline-svg/inline-svg.php';

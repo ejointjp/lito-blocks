@@ -1,0 +1,45 @@
+.evaluation {
+  padding: var(--lito-spacing-box);
+  border-radius: var(--lito-radius-md);
+  background-color: var(--lito-base-gray);
+  display: grid;
+  gap: 1rem;
+  width: fit-content;
+  min-width: min(24rem, 100%);
+}
+
+.evaluation-title {
+  font-weight: 600;
+}
+
+.evaluation-items {
+  display: grid;
+  gap: 0.125rem;
+}
+
+.evaluation-stars {
+  display: flex;
+  gap: 0.125em;
+}
+.evaluation-stars svg {
+  width: 1em;
+  height: 1em;
+  margin-left:;
+}
+
+.evaluation-item,
+.evaluation-overall {
+  font-size: var(--lito-font-size-sm);
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto min-content 2em;
+  gap: 1rem;
+}
+
+.evaluation-overall {
+  margin-top: 1px solid var(--lito-screen);
+}
+
+.evaluation-rating {
+  font-size: 0.875em;
+}

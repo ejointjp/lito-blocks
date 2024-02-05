@@ -1,5 +1,5 @@
 {
-  "name": "lito-blocks-example",
+  "name": "lito-blocks-evaluation",
   "version": "0.1.0",
   "description": "Example block scaffolded with Create Block tool.",
   "author": "The WordPress Contributors",
@@ -16,5 +16,9 @@
   },
   "devDependencies": {
     "@wordpress/scripts": "^26.18.0"
+  },
+  "dependencies": {
+    "react-beautiful-dnd": "^13.1.1",
+    "react-icons": "^5.0.1"
   }
 }

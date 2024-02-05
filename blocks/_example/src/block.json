@@ -1,11 +1,10 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "lito/svg-site-logo",
+  "name": "lito/example",
   "version": "0.1.0",
-  "title": "Svg Site Logo",
-  "category": "widgets",
-  "icon": "smiley",
+  "title": "Example",
+  "category": "lito-blocks",
   "description": "Example block scaffolded with Create Block tool.",
   "example": {},
   "supports": {
