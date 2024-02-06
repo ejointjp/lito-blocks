@@ -7,7 +7,7 @@ export default function Evaluation({ attributes }) {
 
   return (
     <div className="evaluation">
-      <div className="evaluation-title">名前は{title}</div>
+      <div className="evaluation-title">{title}</div>
       <div className="evaluation-items">
         {items.map((item, index) => (
           <div className="evaluation-item" key={index}>
@@ -23,7 +23,7 @@ export default function Evaluation({ attributes }) {
           {renderStars(overallRating)}
         </div>
         <div className="evaluation-overall-rating evaluation-rating">
-          {overallRating.toFixed(1)}
+          <strong>{overallRating.toFixed(1)}</strong>
         </div>
       </div>
     </div>

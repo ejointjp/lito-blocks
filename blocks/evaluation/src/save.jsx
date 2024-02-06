@@ -1,5 +1,10 @@
 import { useBlockProps } from '@wordpress/block-editor';
+import Evaluation from './components/Evaluation';
 
-export default function save() {
-  return <p {...useBlockProps.save()}>{'Example – hello from the saved content!'}</p>;
+export default function save({ attributes }) {
+  return (
+    <div {...useBlockProps.save()}>
+      <Evaluation attributes={attributes} />
+    </div>
+  );
 }

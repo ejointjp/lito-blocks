@@ -1,17 +1,16 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl, RangeControl, Button } from '@wordpress/components';
-import { useRef, useEffect } from '@wordpress/element';
-import { renderStars } from './libs/renderStars';
+import { useState, useRef, useEffect } from '@wordpress/element';
 import Evaluation from './components/Evaluation';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import { calculateOverallRating } from './libs/calculateOverallRating';
 
 function Edit({ attributes, setAttributes }) {
   const { title, items } = attributes;
   const refs = useRef([]);
   const focusedIndex = useRef(null); // 新しいフォーカスするアイテムのインデックスを保持するためのref
-  const overallRating = calculateOverallRating(items).toFixed(2);
+
+  const [droppableId] = useState(`droppable-${Math.random().toString(36).slice(2, 9)}`);
 
   // ドラッグ&ドロップの終了時の処理
   const onDragEnd = (result) => {
@@ -86,75 +85,79 @@ function Edit({ attributes, setAttributes }) {
       <InspectorControls>
         <PanelBody title={__('Rating Items', 'text-domain')}>
           <Button className="is-secondary" onClick={addItem}>
-            {__('Add Item', 'text-domain')}
+            項目を追加
           </Button>
         </PanelBody>
       </InspectorControls>
 
       <Evaluation attributes={attributes} />
 
-      <div className="evaluation-name">
-        <TextControl
-          label={__('Evaluation Name', 'text-domain')}
-          value={title}
-          onChange={(value) => setAttributes({ title: value })}
-        />
-      </div>
+      <div className="evaluation-edit">
+        <div className="evaluation-edit-title">
+          <TextControl
+            label="タイトル"
+            value={title}
+            onChange={(value) => setAttributes({ title: value })}
+            placeholder="タイトルを入力"
+          />
+        </div>
 
-      <DragDropContext onDragEnd={onDragEnd}>
-        <Droppable droppableId="items-list">
-          {(provided) => (
-            <div {...provided.droppableProps} ref={provided.innerRef}>
-              {items.map((item, index) => (
-                <Draggable key={item.id} draggableId={item.id} index={index}>
-                  {(provided) => (
-                    <div
-                      ref={provided.innerRef}
-                      {...provided.draggableProps}
-                      {...provided.dragHandleProps}
-                      className="rating-item"
-                    >
-                      <TextControl
-                        label={__('Item Name', 'text-domain')}
-                        value={item.name}
-                        onChange={(value) => updateItem(index, 'name', value)}
-                        ref={(el) => (refs.current[index] = el)}
-                      />
-                      <RangeControl
-                        label={__('Rating', 'text-domain')}
-                        value={item.rating}
-                        onChange={(value) => updateItem(index, 'rating', value)}
-                        min={0}
-                        max={5}
-                        step={0.5}
-                      />
-                      <div className="stars-rating">{renderStars(item.rating)}</div>
+        <DragDropContext onDragEnd={onDragEnd}>
+          <Droppable droppableId={droppableId}>
+            {(provided) => (
+              <div
+                {...provided.droppableProps}
+                ref={provided.innerRef}
+                className="evaluation-edit-droppable"
+              >
+                {items.map((item, index) => (
+                  <Draggable key={item.id} draggableId={item.id} index={index}>
+                    {(provided) => (
+                      <div
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        className="evaluation-edit-draggable"
+                      >
+                        <div className="evaluation-edit-draggable-content">
+                          <TextControl
+                            label="項目名"
+                            value={item.name}
+                            onChange={(value) => updateItem(index, 'name', value)}
+                            ref={(el) => (refs.current[index] = el)}
+                          />
+                          <RangeControl
+                            label="評価値"
+                            value={item.rating}
+                            onChange={(value) => updateItem(index, 'rating', value)}
+                            min={0}
+                            max={5}
+                            step={0.5}
+                          />
+                        </div>
 
-                      <Button className="is-secondary is-small" onClick={() => addItem(index)}>
-                        Add Item
-                      </Button>
-                      {items.length > 1 && (
-                        <Button
-                          className="is-secondary is-destructive is-small"
-                          onClick={() => deleteItem(index)}
-                        >
-                          {__('Remove Item', 'text-domain')}
-                        </Button>
-                      )}
-                    </div>
-                  )}
-                </Draggable>
-              ))}
-              {provided.placeholder}
-            </div>
-          )}
-        </Droppable>
-      </DragDropContext>
-
-      <div className="overall-rating">
-        {overallRating}
-        <strong>{__('Overall Rating:', 'text-domain')}</strong>
-        {isNaN(overallRating) ? __('No ratings yet', 'text-domain') : renderStars(overallRating)}
+                        <div className="evaluation-edit-draggable-footer">
+                          <Button className="is-secondary is-small" onClick={() => addItem(index)}>
+                            項目を追加
+                          </Button>
+                          {items.length > 1 && (
+                            <Button
+                              className="is-secondary is-destructive is-small"
+                              onClick={() => deleteItem(index)}
+                            >
+                              項目を削除
+                            </Button>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </Draggable>
+                ))}
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+        </DragDropContext>
       </div>
     </div>
   );
