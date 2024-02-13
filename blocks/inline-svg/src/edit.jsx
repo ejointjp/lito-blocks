@@ -13,8 +13,6 @@ import {
   AlignmentToolbar,
   InspectorControls,
   BlockControls,
-  MediaUpload,
-  MediaUploadCheck,
   MediaReplaceFlow,
 } from '@wordpress/block-editor';
 import { ReactSVG } from 'react-svg';
@@ -32,12 +30,8 @@ export default function edit({ attributes, setAttributes }) {
   // 単位に応じた RangeControl の設定
   const [max, setMax] = useState(unit !== 'px' ? 100 : 1000);
   const [step, setStep] = useState(unit !== 'px' ? 0.25 : 1);
-  // const [filename, setFilename] = useState('');
 
   const onSelectImage = (media) => {
-    // if (!media.sizes && !media.media_details?.sizes) {
-    //   return;
-    // }
     console.log('media', media);
     if (media.media_details) {
       media.sizes = media.media_details.sizes;

@@ -26,23 +26,15 @@ function litob_add_dark_mode_script() {
       document.documentElement.classList.add('dark')
     }
   </script>
-  <!-- <style>
-    :root.dark,
-    :root.dark :where(img:not(#wpadminbar img), video, iframe, #wpadminbar, .ignore-dark) {
-      filter: invert(1) hue-rotate(180deg);
-    }
-  </style> -->
 <?php
 }
 add_action('wp_head', 'litob_add_dark_mode_script', 0);
-
-
 
 include plugin_dir_path(__FILE__) . './blocks/alert/alert.php';
 include plugin_dir_path(__FILE__) . './blocks/evaluation/index.php';
 include plugin_dir_path(__FILE__) . './blocks/faq/faq.php';
 include plugin_dir_path(__FILE__) . './blocks/gist/gist.php';
-include plugin_dir_path(__FILE__) . './blocks/inline-svg/inline-svg.php';
+include plugin_dir_path(__FILE__) . './blocks/inline-svg/index.php';
 include plugin_dir_path(__FILE__) . './blocks/lead-sentence/lead-sentence.php';
 include plugin_dir_path(__FILE__) . './blocks/limited-time/limited-time.php';
 include plugin_dir_path(__FILE__) . './blocks/marker-text/marker-text.php';

@@ -95,26 +95,14 @@ function litob_inline_svg_render_callback($attributes) {
     $styled_svg = sprintf('<a href="%s"%s>%s</a>', home_url(), $target, $styled_svg);
   }
 
-  $align_style = isset($attributes['textAlign']) && $attributes['textAlign'] ? ' style="text-align:' . $attributes["textAlign"] . '"' : '';
+  $align_style = isset($attributes['textAlign']) && $attributes['textAlign'] ? ' style="text-align:' . esc_attr($attributes["textAlign"]) . '"' : '';
+  $class_name = isset($attributes['className']) ? ' ' . esc_attr($attributes['className']) : '';
 
-  $html = sprintf('<div class="wp-block-lito-inline-svg"%s>', $align_style);
+  $html = sprintf('<div class="wp-block-lito-inline-svg%s"%s>', $class_name, $align_style);
+
   $html .= $styled_svg;
   $html .= '</div>';
 
-
-  // サニタイズされたSVGコンテンツをスタイル付きで出力
-  // $html = sprintf('<div class="%s">', $class_string);
-  // $html = '<div class="wp-block-lito-inline-svg">';
-  // if ($attributes['linkToHome']) {
-  //   $html .= sprintf('<a%s href="%s" alt="%s">', $target, home_url('/'), $alt);
-  // }
-  // $html .= sprintf('<div class="wp-block-lito-inline-svg-item" style="%s">%s</div>', $style, $sanitized_svg);
-  // if ($attributes['linkToHome']) {
-  //   $html .= '</a>';
-  // }
-  // $html .= '</div>';
-
-  // return $html;
 
   return $html;
 }
@@ -124,8 +112,7 @@ if (!function_exists('litob_sanitize_svg')) {
   function litob_sanitize_svg($svg_content) {
     // 許可されるSVGのタグと属性を定義します
     $allowed_tags = [
-      'svg' =>
-      [
+      'svg' => [
         'class' => true,
         'style' => true,
         'aria-hidden' => true,
@@ -134,22 +121,120 @@ if (!function_exists('litob_sanitize_svg')) {
         'xmlns' => true,
         'width' => true,
         'height' => true,
-        'viewbox' => true, // しばしば viewBox と書かれますが、小文字で始まる必要があります。
+        'viewBox' => true,
+        'viewbox' => true
       ],
       'defs' => [],
       'style' => ['type' => true],
+      'title' => [],
       'g' => [
         'fill' => true,
-        'class' => true
+        'class' => true,
+        'transform' => true
       ],
-      'title' => ['title' => true],
       'path' => [
         'd' => true,
         'fill' => true,
+        'class' => true,
+        'stroke' => true, '
+        stroke-width' => true
+      ],
+      'rect' => [
+        'width' => true,
+        'height' => true,
+        'x' => true,
+        'y' => true,
+        'fill' => true,
+        'class' => true,
+        'stroke' => true,
+        'stroke-width' => true
+      ],
+      'circle' => [
+        'cx' => true,
+        'cy' => true,
+        'r' => true,
+        'fill' => true,
+        'class' => true,
+        'stroke' => true,
+        'stroke-width' => true
+      ],
+      'ellipse' => [
+        'cx' => true,
+        'cy' => true,
+        'rx' => true,
+        'ry' => true,
+        'fill' => true,
+        'class' => true,
+        'stroke' => true,
+        'stroke-width' => true
+      ],
+      'line' => [
+        'x1' => true,
+        'y1' => true,
+        'x2' => true,
+        'y2' => true,
+        'stroke' => true,
+        'class' => true,
+        'stroke-width' => true
+      ],
+      'polyline' => [
+        'points' => true,
+        'stroke' => true,
+        'class' => true,
+        'fill' => true,
+        'stroke-width' => true
+      ],
+      'polygon' => [
+        'points' => true,
+        'stroke' => true,
+        'class' => true,
+        'fill' => true,
+        'stroke-width' => true
+      ],
+      'text' => [
+        'x' => true,
+        'y' => true,
+        'fill' => true,
+        'font-size' => true,
+        'font-family' => true,
+        'text-anchor' => true,
         'class' => true
       ],
-      // その他のSVGタグとその属性...
+      'tspan' => [
+        'x' => true,
+        'y' => true,
+        'fill' => true,
+        'class' => true
+      ],
     ];
+    // $allowed_tags = [
+    //   'svg' =>
+    //   [
+    //     'class' => true,
+    //     'style' => true,
+    //     'aria-hidden' => true,
+    //     'aria-labelledby' => true,
+    //     'role' => true,
+    //     'xmlns' => true,
+    //     'width' => true,
+    //     'height' => true,
+    //     'viewbox' => true, // しばしば viewBox と書かれますが、小文字で始まる必要があります。
+    //     "viewBox" => true
+    //   ],
+    //   'defs' => [],
+    //   'style' => ['type' => true],
+    //   'g' => [
+    //     'fill' => true,
+    //     'class' => true
+    //   ],
+    //   'title' => ['title' => true],
+    //   'path' => [
+    //     'd' => true,
+    //     'fill' => true,
+    //     'class' => true
+    //   ],
+    //   // その他のSVGタグとその属性...
+    // ];
 
     // wp_kses関数を使用してSVGコンテンツをサニタイズします
     return wp_kses($svg_content, $allowed_tags);

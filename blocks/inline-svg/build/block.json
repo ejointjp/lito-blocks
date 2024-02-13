@@ -6,7 +6,7 @@
   "title": "Inline SVG",
   "category": "lito-blocks",
   "icon": "smiley",
-  "description": "Example block scaffolded with Create Block tool.",
+  "description": "SVGをフレキシブルに、安全に挿入できます",
   "example": {},
   "supports": {
     "html": false
