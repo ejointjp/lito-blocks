@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(function(){const e=document.querySelector(".nav-btn");e&&e.addEventListener("click",(()=>document.body.classList.toggle("menu-open")))}));

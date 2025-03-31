@@ -1,0 +1,6 @@
+nav.global-nav {
+  position: static;
+  width: auto;
+  height: auto;
+  color: var(--wp--preset--color--gray);
+}
